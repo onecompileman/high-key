@@ -1,0 +1,14 @@
+@import '~src/assets/scss/theme-config';
+@import '~src/assets/scss/config';
+
+.#{$style-prefix}-leaderboard {
+  background-image: url(/assets/images/bg-3.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+
+  &__container {
+    height: 100%;
+  }
+}

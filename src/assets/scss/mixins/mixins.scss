@@ -1,0 +1,56 @@
+@import '../globals/variables';
+
+@mixin skewElement($color) {
+  content: '';
+  display: block;
+  height: 200px;
+  background: $color;
+}
+
+@mixin skewAfter {
+  transform: skewY(-5deg);
+  transform-origin: bottom left;
+}
+
+@mixin skewBefore {
+  transform: skewY(5deg);
+  transform-origin: top left;
+}
+
+@mixin random-color() {
+  color: rgb(random(180), random(180), random(180));
+}
+
+@mixin for-phone {
+  @media (min-width: map-get($breakpoints, 'phone')) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: map-get($breakpoints, 'desktop')) {
+    @content;
+  }
+}
+
+@mixin for-small-desktop {
+  @media (min-width: map-get($breakpoints, 'small-desktop')) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop {
+  @media (min-width: map-get($breakpoints, 'big-desktop')) {
+    @content;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}

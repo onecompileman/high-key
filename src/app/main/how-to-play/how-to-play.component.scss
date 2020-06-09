@@ -1,0 +1,147 @@
+@import '~src/assets/scss/theme-config';
+@import '~src/assets/scss/config';
+
+.#{$style-prefix}-how-to {
+  background-image: url(/assets/images/bg-2.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+
+  &__how-text {
+    font-family: 'Dolce Vita';
+    font-size: 36px;
+    color: $dark;
+    letter-spacing: 7px;
+    font-weight: 800;
+
+    @include for-phone {
+      font-size: 24px;
+    }
+
+    @include for-tablet {
+      font-size: 28px;
+    }
+
+    @include for-small-desktop {
+      font-size: 36px;
+    }
+
+
+    @include for-desktop {
+      font-size: 42px;
+    }
+
+
+    @include for-big-desktop {
+      font-size: 52px;
+    }
+  }
+
+  &__logo {
+
+    margin-right: 25px;
+
+    @include for-phone {
+      max-width: 42px;
+    }
+
+    @include for-tablet {
+      max-width: 64px;
+    }
+
+    @include for-small-desktop {
+      max-width: 72px;
+    }
+
+    @include for-desktop {
+      max-width: 94px;
+    }
+
+    @include for-big-desktop {
+      max-width: 120px;
+    }
+  }
+
+  &__instructions {
+    font-size: 24px;
+    font-family: 'Varela';
+    color: $dark;
+    font-weight: 600;
+
+    li {
+      margin-top: 8px;
+    }
+
+    @include for-phone {
+      font-size: 14px;
+      margin-top: 18px;
+
+    }
+
+    @include for-tablet {
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    @include for-small-desktop {
+      font-size: 18px;
+      margin-top: 24px;
+
+    }
+
+
+    @include for-desktop {
+      font-size: 20px;
+      margin-top: 28px;
+    }
+
+
+    @include for-big-desktop {
+      font-size: 24px;
+      margin-top: 32px;
+    }
+  }
+
+  &__action {
+    max-width: 120px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    position: absolute;
+    right: 7%;
+    bottom: 12%;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    @include for-phone {
+      max-width: 60px;
+      margin-top: 20px;
+    }
+
+    @include for-tablet {
+      max-width: 80px;
+      margin-top: 24px;
+    }
+
+    @include for-small-desktop {
+      max-width: 100px;
+      margin-top: 32px;
+    }
+
+    @include for-desktop {
+      max-width: 120px;
+      margin-top: 36px;
+    }
+
+    @include for-big-desktop {
+      max-width: 150px;
+      margin-top: 50px;
+    }
+  }
+}

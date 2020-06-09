@@ -1,0 +1,7 @@
+@import '~src/assets/scss/theme-config';
+@import '~src/assets/scss/config';
+
+.#{$style-prefix}-main {
+  width: 100%;
+  height: 100%;
+}
