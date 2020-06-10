@@ -12,6 +12,7 @@ import { TopScorerComponent } from './top-scorer/top-scorer.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
+import { GameOverComponent } from './game-over/game-over.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CoreModule } from '../core/core.module';
     SuccessComponent,
     TopScorerComponent,
     LeaderboardComponent,
+    GameOverComponent,
   ],
   imports: [CommonModule, MainRoutingModule, SharedModule, CoreModule],
 })

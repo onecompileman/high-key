@@ -17,65 +17,91 @@
     font-family: 'Dolce Vita';
     position: absolute;
     color: white;
-    padding-left: 1.5%;
     font-weight: 800;
+    padding-left: 1.5%;
+    padding-bottom: 1%;
 
     @include for-phone {
-      font-size: 24px;
-      padding-bottom: 12px;
+      font-size: 28px;
     }
 
     @include for-tablet {
       font-size: 42px;
-      padding-bottom: 14px;
     }
 
     @include for-small-desktop {
-      font-size: 51px;
-      padding-bottom: 16px;
+      font-size: 62px;
     }
 
     @include for-desktop {
-      font-size: 70px;
-      padding-bottom: 24px;
+      font-size: 84px;
     }
 
     @include for-big-desktop {
-      font-size: 100px;
-      padding-bottom: 32px;
+      font-size: 112px;
     }
   }
 
   &__congrats-text {
     margin-top: 5px;
-    font-family: 'Varela';
+    font-family: 'Dolce Vita';
     font-size: 36px;
-    color: $danger;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     font-weight: 600;
 
     @include for-phone {
       margin-top: 3px;
-      font-size: 24px;
+      font-size: 28px;
     }
 
     @include for-tablet {
-      font-size: 28px;
+      font-size: 32px;
       margin-top: 5px;
     }
 
     @include for-small-desktop {
-      font-size: 32px;
+      font-size: 36px;
       margin-top: 7px;
     }
 
     @include for-desktop {
-      font-size: 36px;
+      font-size: 42px;
       margin-top: 10px;
     }
 
     @include for-big-desktop {
-      font-size: 48px;
+      font-size: 52px;
+      margin-top: 12px;
+    }
+
+    margin-top: 5px;
+    font-family: 'Dolce Vita';
+    font-size: 36px;
+    letter-spacing: 5px;
+    font-weight: 600;
+
+    @include for-phone {
+      margin-top: 3px;
+      font-size: 28px;
+    }
+
+    @include for-tablet {
+      font-size: 32px;
+      margin-top: 5px;
+    }
+
+    @include for-small-desktop {
+      font-size: 36px;
+      margin-top: 7px;
+    }
+
+    @include for-desktop {
+      font-size: 42px;
+      margin-top: 10px;
+    }
+
+    @include for-big-desktop {
+      font-size: 52px;
       margin-top: 12px;
     }
   }

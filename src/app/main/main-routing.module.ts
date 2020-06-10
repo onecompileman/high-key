@@ -8,6 +8,7 @@ import { GameComponent } from './game/game.component';
 import { SuccessComponent } from './success/success.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { TopScorerComponent } from './top-scorer/top-scorer.component';
+import { GameOverComponent } from './game-over/game-over.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,13 @@ const routes: Routes = [
         component: TopScorerComponent,
         data: {
           animation: 'TopScorerPage',
+        },
+      },
+      {
+        path: 'game-over',
+        component: GameOverComponent,
+        data: {
+          animation: 'GameOverPage',
         },
       },
     ],
