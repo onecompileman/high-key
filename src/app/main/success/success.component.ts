@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'wm-success',
@@ -8,11 +9,23 @@ import { Component, OnInit } from '@angular/core';
 export class SuccessComponent implements OnInit {
   animatedClass: string;
 
-  constructor() {}
+  time: number = 0;
+
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     setTimeout(() => {
       this.animatedClass = 'animate__animated animate__rubberBand';
     }, 1000);
+
+    this.time = this.route.snapshot.queryParams.time;
+  }
+
+  play() {
+    this.router.navigate(['/game']);
+  }
+
+  leaderBoards() {
+    this.router.navigate(['/leaderboard']);
   }
 }

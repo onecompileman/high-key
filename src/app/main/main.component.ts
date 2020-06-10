@@ -14,7 +14,6 @@ export class MainComponent implements OnInit {
   ngOnInit() {}
 
   prepareRoute(outlet: RouterOutlet) {
-    console.log(outlet);
     return (
       outlet &&
       outlet.activatedRouteData &&

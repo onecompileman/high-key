@@ -3,7 +3,7 @@
     <div fxLayoutAlign="center center">
       <img class="wm-success__trophy" src="assets/images/match.png" alt="Match" />
       <div class="wm-success__leader-score">
-        1
+        {{ matches }}
       </div>
     </div>
     <span class="wm-success__congrats-text {{ animatedClass }}">
@@ -19,14 +19,14 @@
   </div>
 
   <div class="wm-success__action-container" fxLayout="column" fxLayoutAlign="center center">
-    <div class="wm-success__action-btn">
+    <div class="wm-success__action-btn" (click)="play()">
       <img src="assets/images/play-again-btn.png" alt="Play Again" />
       <span>
         PLAY AGAIN
       </span>
     </div>
-    <div class="wm-success__action-btn">
-      <img src="assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
+    <div class="wm-success__action-btn" (click)="leaderBoards()">
+      <img src=" assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
       <span>
         LEADERBOARD
       </span>
