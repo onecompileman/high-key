@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { leaderboardListAnimation } from './leaderboard.animation';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LeaderboardService } from 'src/app/core/services/leaderboards.service';
+import { Leaderboard } from 'src/app/shared/models/leaderboard.model';
 
 @Component({
   selector: 'wm-leaderboard',
@@ -8,7 +11,25 @@ import { leaderboardListAnimation } from './leaderboard.animation';
   animations: [leaderboardListAnimation],
 })
 export class LeaderboardComponent implements OnInit {
-  constructor() {}
+  leaderboards: Leaderboard[] = [];
 
-  ngOnInit() {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private leaderboardService: LeaderboardService
+  ) {}
+
+  ngOnInit() {
+    this.leaderboardService.leaderboards$.subscribe(
+      (leaderboards) => (this.leaderboards = leaderboards)
+    );
+  }
+
+  play() {
+    this.router.navigate(['/game']);
+  }
+
+  leaderBoards() {
+    this.router.navigate(['/leaderboard']);
+  }
 }

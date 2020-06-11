@@ -8,11 +8,20 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class GameOverComponent implements OnInit {
   matches: number;
+  name: string;
+
+  url: string;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.matches = this.route.snapshot.queryParams.match;
+    this.name =
+      this.route.snapshot.queryParams.name || localStorage.getItem('name');
+    this.url =
+      location.origin +
+      location.pathname +
+      `?match=${this.matches}&name=${this.name}`;
   }
 
   play() {

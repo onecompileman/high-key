@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { mainRoutingAnimation } from './main-routing.animation';
 import { RouterOutlet } from '@angular/router';
+import { LeaderboardService } from '../core/services/leaderboards.service';
 
 @Component({
   selector: 'wm-main',
@@ -9,9 +10,18 @@ import { RouterOutlet } from '@angular/router';
   animations: [mainRoutingAnimation],
 })
 export class MainComponent implements OnInit {
-  constructor() {}
+  isPortrait: boolean;
 
-  ngOnInit() {}
+  constructor(private leaderboardService: LeaderboardService) {}
+
+  ngOnInit() {
+    this.isPortrait = innerHeight > innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isPortrait = innerHeight > innerWidth;
+  }
 
   prepareRoute(outlet: RouterOutlet) {
     return (

@@ -8,6 +8,8 @@ import { filter } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 import { Howl, Howler } from 'howler';
+import { LeaderboardService } from 'src/app/core/services/leaderboards.service';
+import { Leaderboard } from 'src/app/shared/models/leaderboard.model';
 
 @Component({
   selector: 'wm-game',
@@ -29,7 +31,12 @@ export class GameComponent implements OnInit {
 
   tilesMatch: number = 0;
 
-  constructor(private router: Router) {}
+  leaderboards: Leaderboard[] = [];
+
+  constructor(
+    private router: Router,
+    private leaderboardService: LeaderboardService
+  ) {}
 
   ngOnInit() {
     this.time = 0;
@@ -65,20 +72,28 @@ export class GameComponent implements OnInit {
           matchTile.matched = true;
 
           this.tilesMatch++;
+          const sound = new Howl({
+            src: ['/assets/sounds/match.wav'],
+          });
+
+          sound.play();
 
           if (this.tilesMatch >= 5) {
             setTimeout(() => {
-              this.router.navigate([
-                '/success',
-                { queryParams: { time: this.time } },
-              ]);
+              this.router.navigate(['/success'], {
+                queryParams: { time: this.time },
+              });
             }, 2500);
           }
         } else {
+          // const sound = new Howl({
+          //   src: ['/assets/sounds/no-match.wav'],
+          // });
+
           setTimeout(() => {
             this.tile1.opened = tile.opened = false;
             this.tile1 = this.tile2 = null;
-          }, 800);
+          }, 300);
         }
       }
     }
@@ -91,7 +106,7 @@ export class GameComponent implements OnInit {
         imagePath: `/assets/images/game-icons/d${i + 1}.png`,
         index: i,
         opened: false,
-        match: false,
+        matched: false,
         isLandscape: i + 1 >= 8,
         isEffects: false,
       }));
@@ -102,36 +117,45 @@ export class GameComponent implements OnInit {
         imagePath: `/assets/images/game-icons/${i + 1}.png`,
         index: i,
         opened: false,
-        match: false,
+        matched: false,
         isLandscape: false,
         isEffects: false,
       }));
 
     this.tiles = [
+      ...cloneDeep(this.neededTiles),
+      ...cloneDeep(this.neededTiles),
       ...cloneDeep(this.distractionTiles),
-      ...cloneDeep(this.neededTiles),
-      ...cloneDeep(this.neededTiles),
     ];
 
     this.tiles = shuffle(this.tiles).map((tile, index) => ({ ...tile, index }));
-    this.row1 = this.tiles.slice(1, 7);
-    this.row2 = this.tiles.slice(8, 13);
+    this.row1 = this.tiles.slice(0, 7);
+    this.row2 = this.tiles.slice(7, 13);
     console.log(this.row2);
-    this.row3 = this.tiles.slice(14, 20);
+    this.row3 = this.tiles.slice(13, 20);
   }
 
   private startTimeInterval() {
     interval(10)
-      .pipe(filter(() => this.time < 30))
+      .pipe(filter(() => this.time < 30 && this.tilesMatch < 5))
       .subscribe(() => {
         this.time += 0.01;
 
         if (this.time >= 30) {
+          const sound = new Howl({
+            src: ['/assets/sounds/timesup.mp3'],
+          });
+
+          sound.play();
+
+          this.tiles = this.tiles.map((tile) => ({
+            opened: true,
+            ...tile,
+          }));
           setTimeout(() => {
-            this.router.navigate([
-              '/game-over',
-              { queryParams: { match: this.tilesMatch } },
-            ]);
+            this.router.navigate(['/game-over'], {
+              queryParams: { match: this.tilesMatch },
+            });
           }, 2500);
         }
       });

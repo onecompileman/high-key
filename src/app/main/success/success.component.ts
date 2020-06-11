@@ -10,6 +10,8 @@ export class SuccessComponent implements OnInit {
   animatedClass: string;
 
   time: number = 0;
+  name: string;
+  url: string;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -19,6 +21,12 @@ export class SuccessComponent implements OnInit {
     }, 1000);
 
     this.time = this.route.snapshot.queryParams.time;
+    this.name =
+      this.route.snapshot.queryParams.name || localStorage.getItem('name');
+    this.url =
+      location.origin +
+      location.pathname +
+      `?time=${this.time}&name=${this.name}`;
   }
 
   play() {

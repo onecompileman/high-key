@@ -1,3 +1,16 @@
 <div class="wm-main" [@routeAnimations]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
+
+
+  <div *ngIf="isPortrait" class="wm-main__use-landscape animate__animated animate__fadeInDown">
+    <img class="wm-main__logo" src="assets/images/logo.png" alt="Logo">
+    <div class="wm-main__landscape-text">
+      <img src="assets/images/phone.png" alt="Phone">
+
+      <span>
+        This site works well in landscape mode.
+      </span>
+    </div>
+  </div>
+
 </div>

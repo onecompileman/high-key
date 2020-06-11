@@ -4,4 +4,82 @@
 .#{$style-prefix}-main {
   width: 100%;
   height: 100%;
+
+  &__use-landscape {
+    background-color: #D5D4D4;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__logo {
+    height: 22vh;
+  }
+
+  &__landscape-text {
+    font-size: 10%;
+    font-family: 'Varela';
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: $dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+
+    span {
+      margin-right: 5%;
+    }
+
+    img {
+      margin-left: 5%;
+      margin-right: 3vh;
+
+      @include for-phone {
+        width: 36px;
+      }
+
+      @include for-tablet {
+        width: 42px;
+      }
+
+      @include for-small-desktop {
+        width: 48px;
+      }
+
+      @include for-desktop {
+        width: 52px;
+      }
+
+      @include for-big-desktop {
+        width: 60px;
+      }
+    }
+
+    @include for-phone {
+      font-size: 16px;
+    }
+
+    @include for-tablet {
+      font-size: 18px;
+    }
+
+    @include for-small-desktop {
+      font-size: 24px;
+    }
+
+    @include for-desktop {
+      font-size: 28px;
+    }
+
+    @include for-big-desktop {
+      font-size: 32px;
+    }
+  }
 }
