@@ -79,10 +79,32 @@ export class GameComponent implements OnInit {
           sound.play();
 
           if (this.tilesMatch >= 5) {
-            setTimeout(() => {
-              this.router.navigate(['/success'], {
-                queryParams: { time: this.time },
+            let top = -1;
+            top = this.leaderboards.length
+              ? this.leaderboards.findIndex(
+                  (leaderboard) => this.time <= leaderboard.time
+                )
+              : 1;
+            top =
+              this.leaderboards.length < 5 ? this.leaderboards.length + 1 : top;
+
+            if (top != -1) {
+              this.leaderboardService.create({
+                name: localStorage.getItem('name'),
+                time: this.time,
               });
+            }
+
+            setTimeout(() => {
+              if (top != -1) {
+                this.router.navigate(['/top-scorer'], {
+                  queryParams: { time: this.time, rank: top },
+                });
+              } else {
+                this.router.navigate(['/success'], {
+                  queryParams: { time: this.time },
+                });
+              }
             }, 2500);
           }
         } else {

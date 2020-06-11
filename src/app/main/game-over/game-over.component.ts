@@ -12,6 +12,8 @@ export class GameOverComponent implements OnInit {
 
   url: string;
 
+  isShareMode: boolean;
+
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -22,6 +24,7 @@ export class GameOverComponent implements OnInit {
       location.origin +
       location.pathname +
       `?match=${this.matches}&name=${this.name}`;
+    this.isShareMode = Boolean(this.route.snapshot.queryParams.name);
   }
 
   play() {

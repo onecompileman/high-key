@@ -34,8 +34,11 @@
     <span class="wm-success__your-time">
       YOUR TIME
     </span>
-    <span class="wm-success__share-results">
+    <span class="wm-success__share-results" *ngIf="!isShareMode">
       SHARE YOUR RESULTS
+    </span>
+    <span class="wm-success__share-results" *ngIf="isShareMode">
+      <b>{{ name }}</b> RESULTS
     </span>
     <a
       href="https://www.facebook.com/sharer/sharer.php?u={{
@@ -47,15 +50,12 @@
         class="wm-success__facebook-action"
         src="assets/images/facebook.png"
         alt="Facebook"
-      /> </a
-    ><img
-      class="wm-success__facebook-action"
-      src="assets/images/facebook.png"
-      alt="Facebook"
-    />
+      />
+    </a>
   </div>
 
   <div
+    *ngIf="!isShareMode"
     class="wm-success__action-container"
     fxLayout="column"
     fxLayoutAlign="center center"

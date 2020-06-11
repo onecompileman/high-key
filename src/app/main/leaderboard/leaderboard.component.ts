@@ -20,9 +20,20 @@ export class LeaderboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.leaderboardService.leaderboards$.subscribe(
-      (leaderboards) => (this.leaderboards = leaderboards)
-    );
+    this.leaderboardService.leaderboards$.subscribe((leaderboards) => {
+      this.leaderboards = leaderboards;
+      this.leaderboards =
+        this.leaderboards.length < 5
+          ? [
+              ...this.leaderboards,
+              ...Array(5 - this.leaderboards.length).fill({
+                id: '1',
+                name: '',
+                time: null,
+              }),
+            ]
+          : this.leaderboards;
+    });
   }
 
   play() {

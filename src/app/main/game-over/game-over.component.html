@@ -20,9 +20,13 @@
     <span class="wm-success__you-found">
       IN 30 SECONDS
     </span>
-    <span class="wm-success__share-results">
+    <span class="wm-success__share-results" *ngIf="!isShareMode">
       SHARE YOUR RESULTS
     </span>
+    <span class="wm-success__share-results" *ngIf="isShareMode">
+      <b>{{ name }}</b> RESULTS
+    </span>
+
     <a
       href="https://www.facebook.com/sharer/sharer.php?u={{
         url
@@ -38,6 +42,7 @@
   </div>
 
   <div
+    *ngIf="!isShareMode"
     class="wm-success__action-container"
     fxLayout="column"
     fxLayoutAlign="center center"

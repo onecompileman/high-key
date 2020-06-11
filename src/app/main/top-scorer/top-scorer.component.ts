@@ -14,6 +14,8 @@ export class TopScorerComponent implements OnInit {
   rank: string;
   url: string;
 
+  isShareMode: boolean;
+
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -29,6 +31,7 @@ export class TopScorerComponent implements OnInit {
       location.origin +
       location.pathname +
       `?time=${this.time}&name=${this.name}`;
+    this.isShareMode = Boolean(this.route.snapshot.queryParams.name);
   }
 
   play() {
