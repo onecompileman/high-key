@@ -13,6 +13,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 import { GameOverComponent } from './game-over/game-over.component';
+import { ResetComponent } from './reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { GameOverComponent } from './game-over/game-over.component';
     TopScorerComponent,
     LeaderboardComponent,
     GameOverComponent,
+    ResetComponent,
   ],
   imports: [CommonModule, MainRoutingModule, SharedModule, CoreModule],
 })

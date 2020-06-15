@@ -9,6 +9,7 @@ import { SuccessComponent } from './success/success.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { TopScorerComponent } from './top-scorer/top-scorer.component';
 import { GameOverComponent } from './game-over/game-over.component';
+import { ResetComponent } from './reset/reset.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
         data: {
           animation: 'LeaderboardPage',
         },
+      },
+      {
+        path: 'admin',
+        component: ResetComponent,
       },
       {
         path: 'top-scorer',

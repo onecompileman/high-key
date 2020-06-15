@@ -1,5 +1,7 @@
 export interface Leaderboard {
   id?: string;
   name: string;
-  time: number;
+  rank?: number;
+  match?: number;
+  time?: number;
 }

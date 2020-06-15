@@ -14,7 +14,7 @@
         {{ matches }}
       </div>
     </div>
-    <span class="wm-success__congrats-text {{ animatedClass }}">
+    <span class="wm-success__congrats-text">
       MATCHES FOUND
     </span>
     <span class="wm-success__you-found">
@@ -28,6 +28,7 @@
     </span>
 
     <a
+      *ngIf="!isShareMode"
       href="https://www.facebook.com/sharer/sharer.php?u={{
         url
       }}&display=popup&ref=plugin&src=like&kid_directed_site=0"

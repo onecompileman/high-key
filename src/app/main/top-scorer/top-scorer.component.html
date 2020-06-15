@@ -1,15 +1,7 @@
 <div class="wm-success">
-  <div
-    class="wm-success__container"
-    fxLayout="column"
-    fxLayoutAlign="center center"
-  >
+  <div class="wm-success__container" fxLayout="column" fxLayoutAlign="center center">
     <div fxLayoutAlign="center center">
-      <img
-        class="wm-success__trophy"
-        src="assets/images/trophy-2.png"
-        alt="Trophy"
-      />
+      <img class="wm-success__trophy" src="assets/images/trophy-2.png" alt="Trophy" />
       <div class="wm-success__leader-score">
         {{ rank }}
       </div>
@@ -24,12 +16,8 @@
       YOU'RE ON THE LEADERBOARD!
     </span>
     <div fxLayoutAlign="center center">
-      <img
-        src="assets/images/time-holder.png"
-        alt="Time holder"
-        class="wm-success__time"
-      />
-      <div class="wm-success__time-text">{{ time | number: '.2-2' }}s</div>
+      <img src="assets/images/time-holder.png" alt="Time holder" class="wm-success__time" />
+      <div class="wm-success__time-text">{{ time | number: '.2-2' }}<small>s</small></div>
     </div>
     <span class="wm-success__your-time">
       YOUR TIME
@@ -40,26 +28,14 @@
     <span class="wm-success__share-results" *ngIf="isShareMode">
       <b>{{ name }}</b> RESULTS
     </span>
-    <a
-      href="https://www.facebook.com/sharer/sharer.php?u={{
+    <a *ngIf="!isShareMode" href="https://www.facebook.com/sharer/sharer.php?u={{
         url
-      }}&display=popup&ref=plugin&src=like&kid_directed_site=0"
-      target="blank"
-    >
-      <img
-        class="wm-success__facebook-action"
-        src="assets/images/facebook.png"
-        alt="Facebook"
-      />
+      }}&display=popup&ref=plugin&src=like&kid_directed_site=0" target="blank">
+      <img class="wm-success__facebook-action" src="assets/images/facebook.png" alt="Facebook" />
     </a>
   </div>
 
-  <div
-    *ngIf="!isShareMode"
-    class="wm-success__action-container"
-    fxLayout="column"
-    fxLayoutAlign="center center"
-  >
+  <div *ngIf="!isShareMode" class="wm-success__action-container" fxLayout="column" fxLayoutAlign="center center">
     <div class="wm-success__action-btn" (click)="play()">
       <img src="assets/images/play-again-btn.png" alt="Play Again" />
       <span>

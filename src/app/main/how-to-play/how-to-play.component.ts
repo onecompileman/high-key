@@ -9,7 +9,11 @@ import { Router } from '@angular/router';
 export class HowToPlayComponent implements OnInit {
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (!localStorage.getItem('name')) {
+      this.router.navigate(['/']);
+    }
+  }
 
   play() {
     this.router.navigate(['/game']);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LeaderboardService } from 'src/app/core/services/leaderboards.service';
 
 @Component({
   selector: 'wm-game-over',
@@ -14,17 +15,27 @@ export class GameOverComponent implements OnInit {
 
   isShareMode: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private leaderboardService: LeaderboardService
+  ) {}
 
   ngOnInit() {
-    this.matches = this.route.snapshot.queryParams.match;
-    this.name =
-      this.route.snapshot.queryParams.name || localStorage.getItem('name');
-    this.url =
-      location.origin +
-      location.pathname +
-      `?match=${this.matches}&name=${this.name}`;
-    this.isShareMode = Boolean(this.route.snapshot.queryParams.name);
+    const leaderboardId = localStorage.getItem('leaderboard-id');
+    const leaderboardIdQuery = this.route.snapshot.queryParams.id;
+    if (!leaderboardId) {
+      this.router.navigate(['/']);
+    }
+    this.matches = +localStorage.getItem('match');
+    this.name = localStorage.getItem('name');
+    this.url = location.origin + location.pathname + `?id=${leaderboardId}`;
+    this.isShareMode = Boolean(leaderboardIdQuery);
+
+    this.leaderboardService.getById(leaderboardId).subscribe((leaderboard) => {
+      this.matches = leaderboard.match;
+      this.name = leaderboard.name;
+    });
   }
 
   play() {

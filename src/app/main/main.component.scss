@@ -26,20 +26,20 @@
     font-family: 'Varela';
     font-weight: 600;
     letter-spacing: 4px;
-    color: $dark;
+    color: #555;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     padding: 30px;
+    text-align: center;
+    width: fit-content;
 
-    span {
-      margin-right: 5%;
-    }
+
 
     img {
-      margin-left: 5%;
-      margin-right: 3vh;
+      margin-right: 15px;
+      margin-top: -10px;
 
       @include for-phone {
         width: 36px;
