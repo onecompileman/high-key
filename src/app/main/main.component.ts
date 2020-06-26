@@ -12,15 +12,22 @@ import { LeaderboardService } from '../core/services/leaderboards.service';
 export class MainComponent implements OnInit {
   isPortrait: boolean;
 
+  height: number;
+  width: number;
+
   constructor(private leaderboardService: LeaderboardService) {}
 
   ngOnInit() {
     this.isPortrait = innerHeight > innerWidth;
+    this.height = innerHeight;
+    this.width = innerWidth;
   }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.isPortrait = innerHeight > innerWidth;
+    this.height = innerHeight;
+    this.width = innerWidth;
   }
 
   prepareRoute(outlet: RouterOutlet) {
