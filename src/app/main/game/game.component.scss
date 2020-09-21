@@ -2,312 +2,155 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-game {
-  background-image: url(/assets/images/bg-5.png);
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;
+	background-image: url(/assets/images/parallax-bg.png);
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	width: 100%;
 
-  &__container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+	&__container {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 
-  &__hint-container {
-    display: flex;
-    width: 100%;
-    height: 20vh;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url(/assets/images/rectangle.png);
-    background-size: cover;
-    background-position: center;
-  }
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		width: calc(100% - 6vh);
+		margin: 3vh;
+		margin-top: 5vh;
+	}
 
-  &__pairs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5vh;
-    margin-right: 5vh;
-  }
+	&__score-ui {
+		img {
+			height: 18.5vh;
+		}
+	}
 
-  &__pair-caption {
-    font-size: 3.5vh;
-    font-weight: 600;
-    font-family: 'Dolce Vita';
-    margin-top: -1.5vh;
-  }
+	&__game-text {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		z-index: 10;
 
-  &__hint {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+		img {
+			height: 20vh;
+		}
 
-    span {
-      font-size: 3.5vh;
-      font-weight: 600;
-      font-family: 'Dolce Vita';
-    }
-  }
+		span {
+			font-family: 'Varela';
+			position: absolute;
+			font-size: 8vh;
+		}
+	}
 
-  &__game-text {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    z-index: 10;
-    animation: matchEffect 2.5s ease-in forwards;
+	&__score-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		font-family: 'Dolce Vita';
 
-    span {
-      font-size: 18vh;
-      color: #15183f;
-      font-family: 'Dolce Vita';
-      font-weight: 800;
-    }
-  }
+		b {
+			font-size: 36px;
+			color: $dark;
+			font-weight: 800;
 
-  &__hint-icon-container {
-    display: flex;
-    align-items: center;
+			@include for-phone {
+				font-size: 20px;
+			}
 
-    img {
-      &:first-child {
-        height: 14vh;
-        z-index: 1;
-      }
+			@include for-tablet {
+				font-size: 24px;
+			}
 
-      &:nth-child(2) {
-        height: 9vh;
-        position: absolute;
-        z-index: 2;
-      }
+			@include for-small-desktop {
+				font-size: 32px;
+			}
 
-      &:nth-child(3) {
-        height: 15vh;
-        position: absolute;
-        z-index: 0;
-      }
-    }
-  }
+			@include for-desktop {
+				font-size: 48px;
+			}
 
-  &__tile-bg {
-    height: 29vh;
-    z-index: 0;
+			@include for-big-desktop {
+				font-size: 52px;
+			}
+		}
 
-    @include for-phone {
-      height: 25vh;
-    }
+		span {
+			color: $dark;
+			font-weight: bold;
 
-    @include for-tablet {
-      height: 25vh;
-    }
+			@include for-phone {
+				font-size: 12px;
+			}
 
-    @include for-small-desktop {
-      height: 29vh;
-    }
+			@include for-tablet {
+				font-size: 13px;
+			}
 
+			@include for-small-desktop {
+				font-size: 14px;
+			}
 
-  }
+			@include for-desktop {
+				font-size: 15px;
+			}
 
-  &__game-row-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -6vh;
+			@include for-big-desktop {
+				font-size: 16px;
+			}
+		}
+	}
 
-    &:first-child {
-      margin-top: 2.5vh;
+	#gameContainer {
+		width: 100%;
+		height: 100%;
+	}
 
-      @include for-phone {
-        margin-top: 8.5vh;
-      }
-
-      @include for-tablet {
-        margin-top: 8.5vh;
-      }
-
-      @include for-small-desktop {
-        margin-top: 2.5vh;
-      }
-    }
-  }
-
-  &__game-tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //  animation: fade-in 400ms ease-in forwards;
-    //  transform: translateY(-80%);
-    //  opacity: 0;
-    margin-left: 1.2vh;
-    margin-right: 1.2vh;
-    transition: 0.2s ease-in;
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &:active {
-      transform: scale(0.9);
-    }
-
-    img {
-      &:first-child {
-        margin-left: 0.3vh;
-        margin-bottom: 0.2vh;
-        height: 27vh;
-        position: absolute;
-        z-index: 1;
-
-        @include for-phone {
-          height: 23vh;
-        }
-
-        @include for-tablet {
-          height: 23vh;
-        }
-
-        @include for-small-desktop {
-          height: 27vh;
-        }
-
-      }
-
-      &:nth-child(2) {
-        // width: 13vh;
-        height: 17vh;
-        position: absolute;
-        z-index: 2;
-
-        @include for-phone {
-          height: 13vh;
-        }
-
-        @include for-tablet {
-          height: 13vh;
-        }
-
-        @include for-small-desktop {
-          height: 17vh;
-        }
-
-      }
-    }
-  }
-
-  &__effect {
-    height: 10vh;
-    position: absolute;
-    z-index: 9;
-    margin-top: -11vh;
-    animation: matchEffect 2.5s ease-in forwards;
-  }
-
-  &__landscape-tile {
-    width: 17vh !important;
-    height: auto !important;
-
-    @include for-phone {
-      height: 13vh;
-    }
-
-    @include for-tablet {
-      height: 13vh;
-    }
-
-    @include for-small-desktop {
-      height: 17vh;
-    }
-  }
-
-  &__hint-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fade-in 400ms ease-in forwards;
-    transform: translateY(-80%);
-    opacity: 0;
-    margin-left: 1vh;
-    margin-right: 1vh;
-
-    @for $x from 1 through 5 {
-      &:nth-child(#{$x}) {
-        animation-delay: (200ms * ($x - 1)) + 500ms;
-      }
-    }
-  }
-
-  &__pair-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      height: 15vh;
-    }
-
-    &:last-child {
-      img {
-        height: 17vh;
-      }
-    }
-
-    span {
-      position: absolute;
-      font-family: 'Dolce Vita';
-      font-size: 6.5vh;
-      font-weight: 700;
-      padding-left: 1.5vh;
-      padding-bottom: 1vh;
-    }
-  }
-}
-
-@keyframes fade-in {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+	#defaultCanvas0 {
+		touch-action: manipulation;
+	}
 }
 
 @keyframes matchEffect {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+		transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+		-webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+		animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
 
-  30% {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1) translate3d(10px, 0, 0);
-    transform: scale3d(1, 1, 1) translate3d(10px, 0, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
+	30% {
+		opacity: 1;
+		-webkit-transform: scale3d(1, 1, 1) translate3d(10px, 0, 0);
+		transform: scale3d(1, 1, 1) translate3d(10px, 0, 0);
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+	}
 
-  80% {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
-    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
+	80% {
+		opacity: 1;
+		-webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+		transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+	}
 
-  100% {
-    opacity: 0;
-    transform: scale(0);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
+	100% {
+		opacity: 0;
+		transform: scale(0);
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+	}
 }

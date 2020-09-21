@@ -1,191 +1,51 @@
 <div class="wm-game">
   <div class="wm-game__container">
-    <div class="wm-game__game">
-      <!-- Row 1 -->
-      <div class="wm-game__game-row-1">
-        <div
-          class="wm-game__game-tile animate__animated"
-          *ngFor="let tile of row1"
-          [class.animate__flipInY]="tile.opened"
-          (click)="openTile(tile)"
-        >
-          <img
-            class="animate__animated"
-            [class.animate__flipOutY]="!tile.opened"
-            src="assets/images/match-bg.png"
-            alt="Match"
-          />
-          <img
-            class="animate__animated"
-            [class.animate__flipOutY]="!tile.opened"
-            [class.wm-game__landscape-tile]="tile.isLandscape"
-            [src]="tile.imagePath"
-            alt="Hint Icon"
-          />
-          <img
-            [hidden]="!tile.matched"
-            class="wm-game__tile-bg"
-            src="assets/images/match-border.png"
-            alt="Match"
-          />
-          <img
-            [hidden]="tile.matched"
-            class="wm-game__tile-bg"
-            src="assets/images/leaderboard-bg.png"
-            alt="Match"
-          />
-          <img
-            *ngIf="tile.isEffects"
-            class="wm-game__effect animate__animated animate__zoomInLeft"
-            src="assets/images/match-effect.png"
-            alt="Match"
-          />
+    <div class="wm-game__header">
+      <div
+        class="wm-game__score-ui no-select"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <img src="assets/images/score.png" alt="Score" />
+        <div class="wm-game__score-info no-select">
+          <b id="score">0</b>
+          <span  class="no-select">SCORE</span>
         </div>
       </div>
-      <!-- Row 2 -->
-      <div class="wm-game__game-row-1">
-        <div
-          class="wm-game__game-tile animate__animated"
-          *ngFor="let tile of row2"
-          [class.animate__flipInY]="tile.opened"
-          (click)="openTile(tile)"
-        >
-          <img
-            class="animate__animated"
-            [class.animate__flipOutY]="!tile.opened"
-            src="assets/images/match-bg.png"
-            alt="Match"
-          />
-          <img
-            class="animate__animated"
-            [class.animate__flipOutY]="!tile.opened"
-            [class.wm-game__landscape-tile]="tile.isLandscape"
-            [src]="tile.imagePath"
-            alt="Hint Icon"
-          />
-          <img
-            [hidden]="!tile.matched"
-            class="wm-game__tile-bg"
-            src="assets/images/match-border.png"
-            alt="Match"
-          />
-          <img
-            [hidden]="tile.matched"
-            class="wm-game__tile-bg"
-            src="assets/images/leaderboard-bg.png"
-            alt="Match"
-          />
-          <img
-            *ngIf="tile.isEffects"
-            class="wm-game__effect animate__animated animate__zoomInLeft"
-            src="assets/images/match-effect.png"
-            alt="Match"
-          />
-        </div>
-      </div>
-      <!-- Row 2 -->
-      <div class="wm-game__game-row-1">
-        <div
-          class="wm-game__game-tile animate__animated"
-          *ngFor="let tile of row3"
-          [class.animate__flipInY]="tile.opened"
-          (click)="openTile(tile)"
-        >
-          <img
-            class="animate__animated"
-            [class.animate__flipOutY]="!tile.opened"
-            src="assets/images/match-bg.png"
-            alt="Match"
-          />
-          <img
-            class="animate__animated"
-            [class.animate__flipOutY]="!tile.opened"
-            [class.wm-game__landscape-tile]="tile.isLandscape"
-            [src]="tile.imagePath"
-            alt="Hint Icon"
-          />
-          <img
-            [hidden]="!tile.matched"
-            class="wm-game__tile-bg"
-            src="assets/images/match-border.png"
-            alt="Match"
-          />
-          <img
-            [hidden]="tile.matched"
-            class="wm-game__tile-bg"
-            src="assets/images/leaderboard-bg.png"
-            alt="Match"
-          />
-          <img
-            *ngIf="tile.isEffects"
-            class="wm-game__effect animate__animated animate__zoomInLeft"
-            src="assets/images/match-effect.png"
-            alt="Match"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="wm-game__hint-container">
-      <!-- Pairs -->
-      <div class="wm-game__pairs">
-        <div class="wm-game__pair-item">
-          <img src="assets/images/pairs.png" alt="Pair" />
-          <span>
-            {{ tilesMatch }}
-          </span>
-        </div>
-        <span class="wm-game__pair-caption">
-          PAIRS FOUND
-        </span>
-      </div>
-      <!-- Hint -->
-      <div class="wm-game__hint">
-        <span
-          class="animate__animated animate__rubberBand animate__delay-1s animate__repeat-3"
-        >
-          MATCH THESE ICONS
-        </span>
-        <div class="wm-game__hint-icon-container">
-          <div class="wm-game__hint-icon" *ngFor="let tile of neededTiles">
-            <img src="assets/images/match-bg.png" alt="Match" />
-            <img [src]="tile.imagePath" alt="Hint Icon" />
-            <img
-              *ngIf="tile.matched"
-              class="animate__animated animate__rubberBand"
-              src="assets/images/match-border.png"
-              alt="Match"
-            />
-          </div>
-        </div>
-      </div>
-      <!-- Time -->
-      <div class="wm-game__pairs">
-        <div class="wm-game__pair-item">
-          <img src="assets/images/time.png" alt="Time" />
-          <span>
-            {{ time | number: '.2-2' }}
-          </span>
-        </div>
-        <span class="wm-game__pair-caption">
-          TIME
-        </span>
-      </div>
-    </div>
-  </div>
 
-  <div class="wm-game__game-text animate__animated">
+      <div
+        class="wm-game__score-ui no-select"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <img src="assets/images/score.png" alt="Score" />
+        <div class="wm-game__score-info no-select">
+          <b class="no-select">{{ time | number : '.2-2'}}</b>
+          <span  class="no-select">TIME</span>
+        </div>
+      </div>
+    </div>
+    <div id="gameContainer"></div>
+  </div>
+  <div *ngIf="!isStarted && time > 0 && !isGameOver no-select" class="wm-game__game-text animate__animated animate__flipInY" (click)="startGame()">
+    <img src="assets/images/rectangle.png" alt="Rectangle">
+    <span *ngIf="gameLoaded; else loadingText">
+      TAP THE SCREEN TO START
+    </span>
+    <ng-template #loadingText>
+      LOADING
+    </ng-template>
+  </div>
+  <div class="wm-game__game-text no-select" *ngIf="time <= 0">
+    <img src="assets/images/rectangle.png" alt="Rectangle">
     <span>
-      GAME
+      TIME'S UP!
     </span>
   </div>
-  <div class="wm-game__game-text animate__animated" *ngIf="tilesMatch >= 5">
+  <div *ngIf="isGameOver" class="wm-game__game-text no-select animate__animated animate__flipInY" >
+    <img src="assets/images/rectangle.png" alt="Rectangle">
     <span>
-      CONGRATS
-    </span>
-  </div>
-  <div class="wm-game__game-text" *ngIf="time >= 30">
-    <span>
-      TIMES UP
+      Game Over!
     </span>
   </div>
 </div>

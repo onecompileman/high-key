@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/waveplay-memory-game",
+    "public": "dist/beehive-game",
     "ignore": [
       "firebase.json",
       "**/.*",

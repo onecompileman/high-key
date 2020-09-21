@@ -5,42 +5,48 @@ import { LeaderboardService } from 'src/app/core/services/leaderboards.service';
 import { Leaderboard } from 'src/app/shared/models/leaderboard.model';
 
 @Component({
-  selector: 'wm-leaderboard',
-  templateUrl: './leaderboard.component.html',
-  styleUrls: ['./leaderboard.component.scss'],
-  animations: [leaderboardListAnimation],
+	selector: 'wm-leaderboard',
+	templateUrl: './leaderboard.component.html',
+	styleUrls: [ './leaderboard.component.scss' ],
+	animations: [ leaderboardListAnimation ]
 })
 export class LeaderboardComponent implements OnInit {
-  leaderboards: Leaderboard[] = [];
+	leaderboards: Leaderboard[] = [];
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private leaderboardService: LeaderboardService
-  ) {}
+	constructor(
+		private router: Router,
+		private route: ActivatedRoute,
+		private leaderboardService: LeaderboardService
+	) {}
 
-  ngOnInit() {
-    this.leaderboardService.leaderboards$.subscribe((leaderboards) => {
-      this.leaderboards = leaderboards;
-      this.leaderboards =
-        this.leaderboards.length < 5
-          ? [
-              ...this.leaderboards,
-              ...Array(5 - this.leaderboards.length).fill({
-                id: '1',
-                name: '',
-                time: null,
-              }),
-            ]
-          : this.leaderboards;
-    });
-  }
+	ngOnInit() {
+		this.leaderboardService.leaderboards$.subscribe((leaderboards) => {
+			console.log(leaderboards);
 
-  play() {
-    this.router.navigate(['/game']);
-  }
+			this.leaderboards = leaderboards;
+			this.leaderboards.sort((a, b) => b.score - a.score);
 
-  leaderBoards() {
-    this.router.navigate(['/leaderboard']);
-  }
+			this.leaderboards =
+				this.leaderboards.length < 5
+					? [
+							...this.leaderboards,
+							...Array(5 - this.leaderboards.length).fill({
+								id: '1',
+								name: '',
+								score: null
+							})
+						]
+					: this.leaderboards;
+
+			console.log(this.leaderboards);
+		});
+	}
+
+	play() {
+		this.router.navigate([ '/game' ]);
+	}
+
+	leaderBoards() {
+		this.router.navigate([ '/leaderboard' ]);
+	}
 }

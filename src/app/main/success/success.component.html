@@ -5,14 +5,14 @@
       CONGRATULATIONS!
     </span>
     <span class="wm-success__you-found">
-      YOU FOUND ALL MATCHES IN 30 SECONDS
+      YOU FOUND 5 OR MORE LIVE ICONS
     </span>
     <div fxLayoutAlign="center center">
       <img src="assets/images/time-holder.png" alt="Time holder" class="wm-success__time" />
-      <div class="wm-success__time-text">{{ time | number: '.2-2' }}<small>s</small></div>
+      <div class="wm-success__time-text">{{ score }}<small></small></div>
     </div>
     <span class="wm-success__your-time">
-      YOUR TIME
+      LIVE ICONS
     </span>
     <span class="wm-success__share-results" *ngIf="!isShareMode">
       SHARE YOUR RESULTS

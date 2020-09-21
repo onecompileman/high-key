@@ -11,14 +11,14 @@
         alt="Match"
       />
       <div class="wm-success__leader-score">
-        {{ matches }}
+        {{ score }}
       </div>
     </div>
     <span class="wm-success__congrats-text">
-      MATCHES FOUND
+      LIVE ICONS
     </span>
     <span class="wm-success__you-found">
-      IN 30 SECONDS
+      IN {{ time | number : '.2-2' }} SECONDS
     </span>
     <span class="wm-success__share-results" *ngIf="!isShareMode">
       SHARE YOUR RESULTS

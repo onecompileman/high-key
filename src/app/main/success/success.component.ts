@@ -3,52 +3,54 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LeaderboardService } from 'src/app/core/services/leaderboards.service';
 
 @Component({
-  selector: 'wm-success',
-  templateUrl: './success.component.html',
-  styleUrls: ['./success.component.scss'],
+	selector: 'wm-success',
+	templateUrl: './success.component.html',
+	styleUrls: [ './success.component.scss' ]
 })
 export class SuccessComponent implements OnInit {
-  animatedClass: string;
+	animatedClass: string;
 
-  time: number = 0;
-  name: string;
-  url: string;
+	time: number = 0;
+	score: number;
+	name: string;
+	url: string;
 
-  isShareMode: boolean;
+	isShareMode: boolean;
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private leaderboardService: LeaderboardService
-  ) {}
+	constructor(
+		private router: Router,
+		private route: ActivatedRoute,
+		private leaderboardService: LeaderboardService
+	) {}
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.animatedClass = 'animate__animated animate__rubberBand';
-    }, 1000);
+	ngOnInit() {
+		setTimeout(() => {
+			this.animatedClass = 'animate__animated animate__rubberBand';
+		}, 1000);
 
-    const leaderboardId = localStorage.getItem('leaderboard-id');
-    const leaderboardIdQuery = this.route.snapshot.queryParams.id;
-    if (!leaderboardId) {
-      this.router.navigate(['/']);
-    }
+		const leaderboardId = localStorage.getItem('leaderboard-id');
+		const leaderboardIdQuery = this.route.snapshot.queryParams.id;
+		if (!leaderboardId) {
+			this.router.navigate([ '/' ]);
+		}
 
-    this.time = +localStorage.getItem('time');
-    this.name = localStorage.getItem('name');
-    this.url = location.origin + location.pathname + `?id=${leaderboardId}`;
-    this.isShareMode = Boolean(leaderboardIdQuery);
+		this.time = +localStorage.getItem('time');
+		this.name = localStorage.getItem('name');
+		this.score = +localStorage.getItem('score');
+		this.url = location.origin + location.pathname + `?id=${leaderboardId}`;
+		this.isShareMode = Boolean(leaderboardIdQuery);
 
-    this.leaderboardService.getById(leaderboardId).subscribe((leaderboard) => {
-      this.time = leaderboard.time;
-      this.name = leaderboard.name;
-    });
-  }
+		this.leaderboardService.getById(leaderboardId).subscribe((leaderboard) => {
+			this.time = leaderboard.time;
+			this.name = leaderboard.name;
+		});
+	}
 
-  play() {
-    this.router.navigate(['/game']);
-  }
+	play() {
+		this.router.navigate([ '/game' ]);
+	}
 
-  leaderBoards() {
-    this.router.navigate(['/leaderboard']);
-  }
+	leaderBoards() {
+		this.router.navigate([ '/leaderboard' ]);
+	}
 }

@@ -3,15 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  firebaseConfig: {
-    apiKey: 'AIzaSyB87wNtMZaIHJKfbvwS57lfQjY6t02alQw',
-    authDomain: 'waveplay-match-game.firebaseapp.com',
-    databaseURL: 'https://waveplay-match-game.firebaseio.com',
-    projectId: 'waveplay-match-game',
-    storageBucket: 'waveplay-match-game.appspot.com',
-    messagingSenderId: '499570891997',
-    appId: '1:499570891997:web:ac0eb1c2f0b729d8c4cf34',
-    measurementId: 'G-VTBVM9C2NT',
-  },
+	production: false,
+	firebaseConfig: {
+		apiKey: 'AIzaSyBEDNFM1-2pcwmAKu5jZo2ZxoU3lsCflW8',
+		authDomain: 'hivemind-beehive.firebaseapp.com',
+		databaseURL: 'https://hivemind-beehive.firebaseio.com',
+		projectId: 'hivemind-beehive',
+		storageBucket: 'hivemind-beehive.appspot.com',
+		messagingSenderId: '414271485650',
+		appId: '1:414271485650:web:13391b22b9f2653dff1f0b',
+		measurementId: 'G-EGRN5TRXHW'
+	}
 };
