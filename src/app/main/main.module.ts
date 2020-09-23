@@ -14,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 import { GameOverComponent } from './game-over/game-over.component';
 import { ResetComponent } from './reset/reset.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ResetComponent } from './reset/reset.component';
     LeaderboardComponent,
     GameOverComponent,
     ResetComponent,
+    HomeComponent,
   ],
   imports: [CommonModule, MainRoutingModule, SharedModule, CoreModule],
 })

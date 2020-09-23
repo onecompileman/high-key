@@ -1,4 +1,9 @@
-<div class="wm-leaderboard" fxLayoutAlign="center center">
+<div class="wm-leaderboard" fxLayout="column" fxLayoutAlign="center center">
+  <img
+    src="assets/images/logo-leaderboard.png"
+    alt="Leaderboard"
+    class="wm-leaderboard__logo-leader"
+  />
   <div
     class="wm-leaderboard__container"
     fxLayout="column"
@@ -9,12 +14,10 @@
       alt="Leaderboard"
       class="wm-leaderboard__bg"
     />
-    <div class="wm-leaderboard__header">
+    <!-- <div class="wm-leaderboard__header">
       <img src="assets/images/logo.png" alt="Logo" />
-      <span>
-        LEADERBOARD
-      </span>
-    </div>
+      <span> LEADERBOARD </span>
+    </div> -->
     <div class="wm-leaderboard__leader-container" [@listAnimation]="5">
       <!-- Leaderitem -->
       <div
@@ -28,15 +31,13 @@
           </span>
         </div>
         <div class="wm-leaderboard__leader-body">
-          <img src="assets/images/leader-item-1.png" alt="Leader Item" />
+          <img src="assets/images/hr.png" alt="Leader Item" />
           <div>
             <span>
+              asdas
               {{ leader.name }}
             </span>
-            <span>
-              {{ leader.score 
-              }}<span *ngIf="leader.time"> </span>
-            </span>
+            <span>{{ leader.score }}<span *ngIf="leader.time"> </span> </span>
           </div>
         </div>
       </div>
@@ -49,15 +50,15 @@
   >
     <div class="wm-leaderboard__action-btn" (click)="play()">
       <img src="assets/images/play-again-btn.png" alt="Play Again" />
-      <span>
+      <!-- <span>
         PLAY AGAIN
-      </span>
+      </span> -->
     </div>
     <div class="wm-leaderboard__action-btn" (click)="leaderBoards()">
       <img src="assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
-      <span>
+      <!-- <span>
         LEADERBOARD
-      </span>
+      </span> -->
     </div>
   </div>
 </div>

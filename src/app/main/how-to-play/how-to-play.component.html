@@ -1,18 +1,72 @@
-<div class="wm-how-to" fxLayoutAlign="center center">
-  <div>
-    <div class="wm-how-to__header" fxLayoutAlign="start center">
-      <img class="wm-how-to__logo" src="assets/images/logo.png" alt="Logo">
-      <span class="wm-how-to__how-text">
-        HOW TO PLAY
+<div class="wm-how-to" fxLayout="column" fxLayoutAlign="center center">
+  <img
+    class="wm-how-to__title"
+    src="assets/images/game-text.png"
+    alt="Game Text"
+  />
+  <div
+    class="container d-flex flex-row container align-items-center justify-content-center"
+  >
+    <div fxFlex="30" fxLayoutAlign="end center">
+      <img class="wm-how-to__hmo" src="assets/images/hmo.png" alt="HMO" />
+    </div>
+    <div fxFlex="70" fxLayout="column" fxLayoutAlign="center start">
+      <img
+        class="wm-how-to__logo-how"
+        src="assets/images/logo-how.png"
+        alt="Logo How"
+      />
+      <span>
+        1.&nbsp; Press any key to help Tammy fly up and let go to fly down, as
+        she navigates through the gut and collects triple comfort blend icons to
+        address her tolerance problems.
+      </span>
+      <div class="d-flex flex-row justify-content-center w-100">
+        <img
+          src="assets/images/hmo.png"
+          alt="HMO"
+          class="wm-how-to__info-icon"
+        />
+      </div>
+      <span>
+        2.&nbsp;Stay vigilant and avoid common triggers of allergy and GI
+        discomfort.
+      </span>
+      <div class="d-flex flex-row justify-content-center w-100">
+        <img
+          src="assets/images/protein.png"
+          alt="HMO"
+          class="wm-how-to__info-icon"
+        />
+        <img
+          src="assets/images/fat.png"
+          alt="HMO"
+          class="wm-how-to__info-icon"
+        />
+        <img
+          src="assets/images/carbo.png"
+          alt="HMO"
+          class="wm-how-to__info-icon"
+        />
+      </div>
+      <span>
+        3. Players who collect the most triple comfort nutrients will be
+        recognized in the leaderboard.
       </span>
     </div>
-    <div class="wm-how-to__instructions">
-      <ol>
-        <li>Click anywhere for the bee to fly up and release to fly down</li>
-        <li>Collect as many Live service icons as you can within 30 seconds</li>
-        <li>Players who collect the most icons join the leaderboard</li>
-      </ol>
-    </div>
   </div>
-  <img (click)="play()" class="wm-how-to__action" src="assets/images/begin-btn.png" alt="Begin">
+  <div class="container mt-2">
+    <p class="text-align-center">
+      The <b>Triple Comfort Blend</b> of HMO, Nucleotides, and pHW is
+      scientifically designed to support
+      <b>allergy risk reduction and fast GI symptom relief.</b>
+    </p>
+  </div>
+
+  <img
+    (click)="play()"
+    class="wm-how-to__action"
+    src="assets/images/begin-btn.png"
+    alt="Begin"
+  />
 </div>

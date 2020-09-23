@@ -3,15 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-	production: false,
-	firebaseConfig: {
-		apiKey: 'AIzaSyBEDNFM1-2pcwmAKu5jZo2ZxoU3lsCflW8',
-		authDomain: 'hivemind-beehive.firebaseapp.com',
-		databaseURL: 'https://hivemind-beehive.firebaseio.com',
-		projectId: 'hivemind-beehive',
-		storageBucket: 'hivemind-beehive.appspot.com',
-		messagingSenderId: '414271485650',
-		appId: '1:414271485650:web:13391b22b9f2653dff1f0b',
-		measurementId: 'G-EGRN5TRXHW'
-	}
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyCe1HxEM_Puf0e3IobyI9Iw7gswKaE97uw',
+    authDomain: 'triple-comfort-quest.firebaseapp.com',
+    databaseURL: 'https://triple-comfort-quest.firebaseio.com',
+    projectId: 'triple-comfort-quest',
+    storageBucket: 'triple-comfort-quest.appspot.com',
+    messagingSenderId: '909494532387',
+    appId: '1:909494532387:web:cb4d2e5551300c3d263496',
+    measurementId: 'G-420F5W2YSB',
+  },
 };

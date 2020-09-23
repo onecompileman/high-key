@@ -1,9 +1,15 @@
 @font-face {
   font-family: 'Varela';
-  src: url(/assets/fonts/VarelaRound-Regular.ttf) format('truetype');
+  src: url(/assets/fonts/GothamBold.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Dolce Vita';
-  src: url(/assets/fonts/dolce_vita/DolceVita.ttf) format('truetype');
+  src: url(/assets/fonts/GothamBook.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Dolce Vita';
+  src: url(/assets/fonts/GothamBold.ttf) format('truetype');
+  font-weight: bold;
 }

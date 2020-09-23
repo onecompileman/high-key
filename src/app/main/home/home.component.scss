@@ -1,0 +1,32 @@
+@import '~src/assets/scss/theme-config';
+@import '~src/assets/scss/config';
+
+.#{$style-prefix}-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/images/bg-1.png');
+  background-size: cover;
+  height: 100vh;
+
+  &__title {
+    height: 17vh;
+  }
+
+  &__logo {
+    height: 45vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+
+  &__start-btn {
+    height: 13vh;
+    cursor: pointer;
+    transition: 0.2s linear;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

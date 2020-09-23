@@ -10,6 +10,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { TopScorerComponent } from './top-scorer/top-scorer.component';
 import { GameOverComponent } from './game-over/game-over.component';
 import { ResetComponent } from './reset/reset.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,13 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        component: HomeComponent,
+        data: {
+          animation: 'HomePage',
+        },
+      },
+      {
+        path: 'landing',
         component: LandingComponent,
         data: {
           animation: 'LandingPage',

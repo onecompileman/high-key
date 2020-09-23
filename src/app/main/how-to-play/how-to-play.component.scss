@@ -2,134 +2,243 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-how-to {
-	background-image: url(/assets/images/bg-2.png);
-	background-size: cover;
-	background-position: center;
-	height: 100%;
-	width: 100%;
+  background-image: url(/assets/images/bg-1.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 
-	&__how-text {
-		font-family: 'Dolce Vita';
-		font-size: 36px;
-		color: $dark;
-		letter-spacing: 7px;
-		font-weight: 800;
+  &__title {
+    height: 20vh;
+    max-width: 100%;
+    margin-bottom: -5vh;
+    margin-top: -5vh;
 
-		@include for-phone {
-			font-size: 24px;
-		}
+    @include for-phone {
+      max-width: 95%;
+      height: auto;
+      margin-bottom: -5vh;
+      margin-top: -2vh;
+    }
 
-		@include for-tablet {
-			font-size: 28px;
-		}
+    @include for-tablet {
+      max-width: 95%;
+      height: auto;
+      margin-bottom: -5vh;
+      margin-top: -2vh;
+    }
 
-		@include for-small-desktop {
-			font-size: 36px;
-		}
+    @include for-small-desktop {
+      // max-width: 95%;
+      height: 20vh;
+      margin-bottom: -5vh;
+      margin-top: -5vh;
+    }
+  }
 
-		@include for-desktop {
-			font-size: 42px;
-		}
+  &__logo-how {
+    height: 17vh;
+    width: auto;
+  }
 
-		@include for-big-desktop {
-			font-size: 52px;
-		}
-	}
+  &__hmo {
+    height: 55vh;
+  }
 
-	&__logo {
-		margin-right: 25px;
+  &__info-icon {
+    height: 8vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+  }
 
-		@include for-phone {
-			max-width: 42px;
-		}
+  p {
+    font-family: 'Dolce Vita';
+    // font-weight: bolder;
+    font-size: 16px;
+    color: $dark;
+    line-height: 18px;
+    margin-right: 10px;
 
-		@include for-tablet {
-			max-width: 64px;
-		}
+    @include for-phone {
+      font-size: 14px;
+      line-height: 15px;
+    }
 
-		@include for-small-desktop {
-			max-width: 72px;
-		}
+    @include for-tablet {
+      font-size: 16px;
+      line-height: 18px;
+    }
 
-		@include for-desktop {
-			max-width: 94px;
-		}
+    @include for-small-desktop {
+      font-size: 24px;
+      line-height: 26px;
+    }
 
-		@include for-big-desktop {
-			max-width: 120px;
-		}
-	}
+    @include for-desktop {
+      font-size: 28px;
+      line-height: 30px;
+    }
 
-	&__instructions {
-		font-size: 24px;
-		font-family: 'Varela';
-		color: $dark;
-		font-weight: 600;
+    @include for-big-desktop {
+      font-size: 32px;
+      line-height: 34px;
+    }
+  }
 
-		li {
-			margin-top: 8px;
-		}
+  span {
+    font-family: 'Dolce Vita';
+    font-weight: bolder;
+    font-size: 14px;
+    color: $dark;
+    line-height: 15px;
 
-		@include for-phone {
-			font-size: 12px;
-			margin-top: 14px;
-		}
+    @include for-phone {
+      font-size: 12px;
+      line-height: 13px;
+      font-weight: normal;
+    }
 
-		@include for-tablet {
-			font-size: 13px;
-			margin-top: 18px;
-		}
+    @include for-tablet {
+      font-size: 12px;
+      line-height: 13px;
+      font-weight: normal;
+    }
 
-		@include for-small-desktop {
-			font-size: 18px;
-			margin-top: 24px;
-		}
+    @include for-small-desktop {
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: bolder;
+    }
 
-		@include for-desktop {
-			font-size: 20px;
-			margin-top: 28px;
-		}
+    @include for-desktop {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: bolder;
+    }
+  }
 
-		@include for-big-desktop {
-			font-size: 24px;
-			margin-top: 32px;
-		}
-	}
+  &__how-text {
+    font-family: 'Dolce Vita';
+    font-size: 36px;
+    color: $dark;
+    letter-spacing: 7px;
+    font-weight: 800;
 
-	&__action {
-		max-width: 120px;
-		transition: 0.2s ease-in;
-		cursor: pointer;
-		position: absolute;
-		right: 7%;
-		bottom: 12vh;
+    @include for-phone {
+      font-size: 24px;
+    }
 
-		&:hover {
-			transform: scale(1.1);
-		}
+    @include for-tablet {
+      font-size: 28px;
+    }
 
-		&:active {
-			transform: scale(0.9);
-		}
+    @include for-small-desktop {
+      font-size: 36px;
+    }
 
-		@include for-phone {
-			max-width: 60px;
-		}
+    @include for-desktop {
+      font-size: 42px;
+    }
 
-		@include for-tablet {
-			max-width: 65px;
-		}
+    @include for-big-desktop {
+      font-size: 52px;
+    }
+  }
 
-		@include for-small-desktop {
-			max-width: 100px;
-		}
+  &__logo {
+    margin-right: 25px;
 
-		@include for-desktop {
-			max-width: 120px;
-		}
+    @include for-phone {
+      max-width: 42px;
+    }
 
-		@include for-big-desktop {
-			max-width: 150px;
-		}
-	}
+    @include for-tablet {
+      max-width: 64px;
+    }
+
+    @include for-small-desktop {
+      max-width: 72px;
+    }
+
+    @include for-desktop {
+      max-width: 94px;
+    }
+
+    @include for-big-desktop {
+      max-width: 120px;
+    }
+  }
+
+  &__instructions {
+    font-size: 24px;
+    font-family: 'Varela';
+    color: $dark;
+    font-weight: 600;
+
+    li {
+      margin-top: 8px;
+    }
+
+    @include for-phone {
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    @include for-tablet {
+      font-size: 13px;
+      margin-top: 18px;
+    }
+
+    @include for-small-desktop {
+      font-size: 18px;
+      margin-top: 24px;
+    }
+
+    @include for-desktop {
+      font-size: 20px;
+      margin-top: 28px;
+    }
+
+    @include for-big-desktop {
+      font-size: 24px;
+      margin-top: 32px;
+    }
+  }
+
+  &__action {
+    max-width: 120px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    position: absolute;
+    right: 2%;
+    bottom: 4vh;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    @include for-phone {
+      max-width: 60px;
+    }
+
+    @include for-tablet {
+      max-width: 65px;
+    }
+
+    @include for-small-desktop {
+      max-width: 100px;
+    }
+
+    @include for-desktop {
+      max-width: 120px;
+    }
+
+    @include for-big-desktop {
+      max-width: 150px;
+    }
+  }
 }

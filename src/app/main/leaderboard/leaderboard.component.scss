@@ -2,246 +2,273 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-leaderboard {
-	background-image: url(/assets/images/bg-3.png);
-	background-size: cover;
-	background-position: center;
-	height: 100%;
-	width: 100%;
+  background-image: url(/assets/images/bg-1.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 
-	&__leader-container {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
+  &__logo-leader {
+    height: 22vh;
+    margin-bottom: -4vh;
+  }
 
-	&__leader-item {
-		display: flex;
-		align-items: center;
-		margin-bottom: 2.5vh;
-		animation: fade-in 400ms ease-in forwards;
-		transform: translateX(-80%);
-		opacity: 0;
+  &__leader-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-		@for $x from 1 through 5 {
-			&:nth-child(#{$x}) {
-				animation-delay: (200ms * ($x - 1)) + 500ms;
-			}
-		}
+  &__leader-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5vh;
+    animation: fade-in 400ms ease-in forwards;
+    transform: translateX(-80%);
+    opacity: 0;
 
-		// width: 90%;
-		// height: 36px;
-		// background-image: url(/assets/images/leader-item-1.png);
-		// background-size: cover;
-		// background-position: center;
-	}
+    @for $x from 1 through 5 {
+      &:nth-child(#{$x}) {
+        animation-delay: (200ms * ($x - 1)) + 500ms;
+      }
+    }
 
-	&__leader-caption {
-		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+    // width: 90%;
+    // height: 36px;
+    // background-image: url(/assets/images/leader-item-1.png);
+    // background-size: cover;
+    // background-position: center;
+  }
 
-		img {
-			height: 7.5vh;
-			margin-left: -10%;
-		}
+  &__leader-caption {
+    // position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-		span {
-			font-family: 'Dolce Vita';
-			font-size: 4vh;
-			position: absolute;
-			color: white;
-			font-weight: 600;
-		}
-	}
+    img {
+      height: 7.5vh;
+      margin-left: -10%;
+    }
 
-	&__header {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		top: 3vh;
-		margin-left: 1vh;
+    span {
+      font-family: 'Dolce Vita';
+      font-size: 4vh;
+      position: absolute;
+      color: white;
+      font-weight: 600;
+    }
+  }
 
-		img {
-			height: 9vh;
-		}
+  &__header {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 3vh;
+    margin-left: 1vh;
 
-		span {
-			margin-top: 4vh;
-			font-size: 4.5vh;
-			letter-spacing: 6px;
-			font-weight: 700;
-			color: $dark;
-			font-family: 'Dolce Vita';
-		}
-	}
+    img {
+      height: 9vh;
+    }
 
-	&__leader-body {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+    span {
+      margin-top: 4vh;
+      font-size: 4.5vh;
+      letter-spacing: 6px;
+      font-weight: 700;
+      color: $dark;
+      font-family: 'Dolce Vita';
+    }
+  }
 
-		img {
-			height: 5.5vh;
-		}
+  &__leader-body {
+    display: flex;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: flex-end;
+    height: 5.5vh;
 
-		div {
-			position: absolute;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			font-family: 'Varela';
-			color: $dark;
-			font-size: 3vh;
-			font-weight: 400;
-			width: -webkit-fill-available;
-			width: -moz-available;
-			padding-left: 9vh;
-			padding-right: 3vh;
-		}
-	}
+    img {
+      width: 50vw;
 
-	&__container {
-		height: 98%;
-		// background-image: url(/assets/images/leaderboard-bg.png);
-		// background-size: auto 100%;
-		// background-position: center;
-		// background-repeat: no-repeat;
-		// width: 100%;
-	}
+      @include for-phone {
+        width: 34vw;
+      }
 
-	&__bg {
-		height: 100%;
-	}
+      @include for-tablet {
+        width: 34vw;
+      }
 
-	&__action-container {
-		right: 5%;
-		position: absolute;
-		bottom: 5%;
+      @include for-small-desktop {
+        width: 40vw;
+      }
 
-		@include for-phone {
-			right: 1%;
-			bottom: 2.5%;
-		}
+      @include for-desktop {
+        width: 40vw;
+      }
 
-		@include for-tablet {
-			right: 2%;
-			bottom: 2.5%;
-		}
+      @include for-big-desktop {
+        width: 40vw;
+      }
+    }
 
-		@include for-small-desktop {
-			right: 3%;
-			bottom: 3%;
-		}
+    div {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Dolce Vita';
+      color: $dark;
+      font-size: 3.5vh;
+      font-weight: 400;
+      width: -webkit-fill-available;
+      width: -moz-available;
+      padding-left: 9vh;
+      padding-right: 8vh;
+    }
+  }
 
-		@include for-desktop {
-			right: 4%;
-			bottom: 4%;
-		}
+  &__container {
+    height: 98%;
+    // background-image: url(/assets/images/leaderboard-bg.png);
+    // background-size: auto 100%;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // width: 100%;
+  }
 
-		@include for-big-desktop {
-			right: 5%;
-			bottom: 5%;
-		}
-	}
+  &__bg {
+    height: 75vh;
+  }
 
-	&__action-btn {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+  &__action-container {
+    right: 5%;
+    position: absolute;
+    bottom: 5%;
 
-		span {
-			font-family: 'Dolce Vita';
-			letter-spacing: 2px;
-			font-size: 24px;
-			font-weight: 600;
+    @include for-phone {
+      right: 1%;
+      bottom: 2.5%;
+    }
 
-			@include for-phone {
-				font-size: 14px;
-				margin-top: -5px;
-			}
+    @include for-tablet {
+      right: 2%;
+      bottom: 2.5%;
+    }
 
-			@include for-tablet {
-				font-size: 16px;
-				margin-top: -8px;
-			}
+    @include for-small-desktop {
+      right: 3%;
+      bottom: 3%;
+    }
 
-			@include for-small-desktop {
-				font-size: 18px;
-				margin-top: -12px;
-			}
+    @include for-desktop {
+      right: 4%;
+      bottom: 4%;
+    }
 
-			@include for-desktop {
-				font-size: 20px;
-				margin-top: -15px;
-			}
+    @include for-big-desktop {
+      right: 5%;
+      bottom: 5%;
+    }
+  }
 
-			@include for-big-desktop {
-				font-size: 22px;
-				margin-top: -17px;
-			}
-		}
+  &__action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-		// &:first-child {
-		//   img {
-		//     animation: playBtn 2s ease-in infinite;
-		//   }
-		// }
+    span {
+      font-family: 'Dolce Vita';
+      letter-spacing: 2px;
+      font-size: 24px;
+      font-weight: 600;
 
-		img {
-			margin-top: 20px;
-			max-width: 120px;
-			transition: 0.2s ease-in;
-			cursor: pointer;
+      @include for-phone {
+        font-size: 14px;
+        margin-top: -5px;
+      }
 
-			&:hover {
-				transform: scale(1.1);
-			}
+      @include for-tablet {
+        font-size: 16px;
+        margin-top: -8px;
+      }
 
-			&:active {
-				transform: scale(0.9);
-			}
+      @include for-small-desktop {
+        font-size: 18px;
+        margin-top: -12px;
+      }
 
-			@include for-phone {
-				max-width: 60px;
-				margin-top: 20px;
-				margin-left: -5px;
-			}
+      @include for-desktop {
+        font-size: 20px;
+        margin-top: -15px;
+      }
 
-			@include for-tablet {
-				max-width: 80px;
-				margin-top: 24px;
-				margin-left: -10px;
-			}
+      @include for-big-desktop {
+        font-size: 22px;
+        margin-top: -17px;
+      }
+    }
 
-			@include for-small-desktop {
-				max-width: 100px;
-				margin-top: 32px;
-				margin-left: -15px;
-			}
+    // &:first-child {
+    //   img {
+    //     animation: playBtn 2s ease-in infinite;
+    //   }
+    // }
 
-			@include for-desktop {
-				max-width: 120px;
-				margin-top: 36px;
-				margin-left: -20px;
-			}
+    img {
+      margin-top: 20px;
+      max-width: 120px;
+      transition: 0.2s ease-in;
+      cursor: pointer;
 
-			@include for-big-desktop {
-				max-width: 150px;
-				margin-top: 50px;
-				margin-left: -25px;
-			}
-		}
-	}
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      @include for-phone {
+        max-width: 60px;
+        margin-top: 20px;
+        margin-left: -5px;
+      }
+
+      @include for-tablet {
+        max-width: 80px;
+        margin-top: 24px;
+        margin-left: -10px;
+      }
+
+      @include for-small-desktop {
+        max-width: 100px;
+        margin-top: 32px;
+        margin-left: -15px;
+      }
+
+      @include for-desktop {
+        max-width: 120px;
+        margin-top: 36px;
+        margin-left: -20px;
+      }
+
+      @include for-big-desktop {
+        max-width: 150px;
+        margin-top: 50px;
+        margin-left: -25px;
+      }
+    }
+  }
 }
 
 @keyframes fade-in {
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
