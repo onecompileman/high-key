@@ -29,11 +29,11 @@ export class Player {
     // 	this.activeFrameIndex++;
     // }
     // this.activeFrameIndex = this.activeFrameIndex === 25 ? 0 : this.activeFrameIndex;
-    this.size = [220 * this.scale, 170 * this.scale];
+    this.size = [200 * this.scale, 190 * this.scale];
   }
 
   update() {
-    this.gravity.y = 0.3 * this.scale;
+    this.gravity.y = 0.33 * this.scale;
     this.applyGravity();
     this.vel.limit(9 * this.scale);
 

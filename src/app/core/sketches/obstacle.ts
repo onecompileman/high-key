@@ -32,11 +32,6 @@ export class Obstacle {
   }
 
   isCollided(target) {
-    return (
-      this.pos.x < target.pos.x + target.size[0] &&
-      this.pos.x + this.size[0] > target.pos.x &&
-      this.pos.y < target.pos.y + target.size[1] &&
-      this.pos.y + this.size[1] > target.pos.y
-    );
+    return this.pos.dist(target.pos) < this.size[0] / 2 + target.size[0] / 2;
   }
 }
