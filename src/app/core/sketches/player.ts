@@ -29,13 +29,13 @@ export class Player {
     // 	this.activeFrameIndex++;
     // }
     // this.activeFrameIndex = this.activeFrameIndex === 25 ? 0 : this.activeFrameIndex;
-    this.size = [135 * this.scale, 118 * this.scale];
+    this.size = [220 * this.scale, 170 * this.scale];
   }
 
   update() {
     this.gravity.y = 0.3 * this.scale;
     this.applyGravity();
-    this.vel.limit(10 * this.scale);
+    this.vel.limit(9 * this.scale);
 
     this.pos.add(this.vel);
 
@@ -47,7 +47,7 @@ export class Player {
   }
 
   jumpUp() {
-    this.vel.add(this.p5.createVector(0, -8 * this.scale));
+    this.vel.add(this.p5.createVector(0, -7.5 * this.scale));
   }
 
   applyGravity() {

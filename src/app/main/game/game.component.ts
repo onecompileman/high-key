@@ -267,10 +267,10 @@ export class GameComponent implements OnInit, AfterViewInit {
           return !o.isOutOfBounds() && !o.isDead();
         });
 
-        if (s.frameCount % 150 === 0 && this.isStarted) {
+        if (s.frameCount % 200 === 0 && this.isStarted) {
           generateObstacles();
         }
-        if (s.frameCount % 220 === 0 && this.isStarted) {
+        if (s.frameCount % 200 === 0 && this.isStarted) {
           generateCollectible();
         }
       };
@@ -298,7 +298,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         const obstacle = s.random(this.assetsManager.obstacles1);
         const obstacleObj = cloneDeep(obstacle);
         const pos = s.createVector(
-          innerWidth + 400 * this.scale,
+          innerWidth + 300 * this.scale,
           s.random(['up', 'down']) === 'up'
             ? s.random(10, 100)
             : innerHeight - s.random(200, 400) * this.scale
@@ -310,10 +310,26 @@ export class GameComponent implements OnInit, AfterViewInit {
         if (!isCollided) {
           obstacles.push(new Obstacle(s, pos, obstacleObj));
         }
+
+        const obstacle1 = s.random(this.assetsManager.obstacles1);
+        const obstacleObj1 = cloneDeep(obstacle1);
+        const pos1 = s.createVector(
+          innerWidth + 1200 * this.scale,
+          s.random(['up', 'down']) === 'up'
+            ? s.random(10, 100)
+            : innerHeight - s.random(200, 400) * this.scale
+        );
+
+        const isCollided1 = obstacles.some((o) =>
+          o.isCollided(new Obstacle(s, pos1, obstacleObj1))
+        );
+        if (!isCollided) {
+          obstacles.push(new Obstacle(s, pos1, obstacleObj1));
+        }
       };
 
       let initializeCollectibles = () => {
-        let initialX = innerWidth * 0.8;
+        let initialX = innerWidth * 0.85;
         let isCollided = false;
         let initialSize = [250 * this.scale, 220 * this.scale];
         let y;
@@ -342,7 +358,7 @@ export class GameComponent implements OnInit, AfterViewInit {
       };
 
       let generateCollectible = () => {
-        let initialX = innerWidth + 850 * this.scale;
+        let initialX = innerWidth + 750 * this.scale;
         let isCollided = false;
         let initialSize = [250 * this.scale, 220 * this.scale];
         let y;

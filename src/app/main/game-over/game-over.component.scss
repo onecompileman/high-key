@@ -12,7 +12,7 @@
     font-weight: bold;
     color: #0d4772;
     text-align: center;
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
 
     @include for-phone {
       margin-top: 3px;
@@ -50,8 +50,10 @@
   }
 
   &__leader-score {
+    display: inline-block;
+    vertical-align: top;
     text-align: center;
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     position: absolute;
     color: $dark;
     font-weight: 800;
@@ -81,7 +83,7 @@
 
   &__congrats-text {
     margin-top: 5px;
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     font-size: 36px;
     letter-spacing: 5px;
     font-weight: 600;
@@ -112,7 +114,7 @@
     }
 
     margin-top: 5px;
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     font-size: 36px;
     letter-spacing: 5px;
     font-weight: 600;
@@ -171,7 +173,7 @@
   }
 
   &__your-time {
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
 
@@ -241,7 +243,7 @@
   &__share-results {
     text-transform: uppercase;
 
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
 
@@ -348,7 +350,7 @@
     justify-content: center;
 
     span {
-      font-family: 'Dolce Vita';
+      font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
       letter-spacing: 2px;
       font-size: 24px;
       font-weight: 600;
@@ -432,7 +434,7 @@
   }
 
   &__time-text {
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
     font-size: 24px;
     // font-weight: 600;

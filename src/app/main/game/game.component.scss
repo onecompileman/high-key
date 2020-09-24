@@ -52,7 +52,7 @@
     }
 
     span {
-      font-family: 'Dolce Vita';
+      font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
       position: absolute;
       font-size: 8vh;
     }
@@ -64,7 +64,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
 
     b {
       font-size: 36px;
@@ -72,15 +72,15 @@
       font-weight: normal;
 
       @include for-phone {
-        font-size: 20px;
+        font-size: 16px;
       }
 
       @include for-tablet {
-        font-size: 24px;
+        font-size: 16px;
       }
 
       @include for-small-desktop {
-        font-size: 32px;
+        font-size: 18px;
       }
 
       @include for-desktop {

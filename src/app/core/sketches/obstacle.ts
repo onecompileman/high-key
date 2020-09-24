@@ -23,7 +23,7 @@ export class Obstacle {
 
   update() {
     this.vel.x = -5 * this.scale;
-    this.size = [220 * this.scale, 220 * this.scale];
+    this.size = [140 * this.scale, 140 * this.scale];
     this.pos.add(this.vel);
   }
 
