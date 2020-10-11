@@ -2,11 +2,20 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-landing {
-  background-image: url(/assets/images/landing-bg.png);
+  background-image: url(/assets/images/bg-1.png);
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
+
+  &__title {
+    height: 20vh;
+    width: auto;
+  }
+
+  &__logo {
+    height: 55vh;
+  }
 
   &__container {
     height: 100%;
@@ -22,22 +31,22 @@
       @include for-big-desktop {
         padding-right: 60px;
       }
-
-      img {
-        width: 80%;
-        margin-bottom: 20px;
-        min-width: 200px;
-
-        transition: 0.2s ease-in;
-        cursor: pointer;
-        &:hover {
-          transform: scale(1.1);
-        }
-
-        &:active {
-          transform: scale(0.9);
-        }
-      }
     }
+  }
+}
+
+.wm-action {
+  width: 78%;
+  margin-bottom: 20px;
+  min-width: 200px;
+
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 }

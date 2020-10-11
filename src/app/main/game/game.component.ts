@@ -18,6 +18,7 @@ import { Obstacle } from 'src/app/core/sketches/obstacle';
 import { Collectible } from 'src/app/core/sketches/collectible';
 import { CollectedParticle } from 'src/app/core/sketches/collected-particle';
 import { SoundManagerService } from 'src/app/core/services/sound-manager.service';
+import { formatNumber } from '@angular/common';
 
 @Component({
   selector: 'wm-game',
@@ -73,6 +74,15 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.isStarted = true;
       this.timeInterval = setInterval(async () => {
         this.time -= 0.1;
+
+        setTimeout(() => {
+          document.querySelector('#time').textContent = '';
+          document.querySelector('#time').textContent = formatNumber(
+            this.time,
+            'en-US',
+            '.2-2'
+          );
+        });
         if (this.time <= 0) {
           this.isStarted = false;
           clearInterval(this.timeInterval);
@@ -118,7 +128,11 @@ export class GameComponent implements OnInit, AfterViewInit {
         localStorage.setItem('leaderboard-id', leaderboard.id);
         setTimeout(() => {
           this.p.remove();
-          this.router.navigate(['/top-scorer']);
+          this.router.navigate(['/slide'], {
+            queryParams: {
+              nextPage: 'top-scorer',
+            },
+          });
         }, 2000);
       } else {
         const leaderboard = await this.leaderBoardService.create({
@@ -132,7 +146,11 @@ export class GameComponent implements OnInit, AfterViewInit {
         setTimeout(() => {
           this.p.remove();
 
-          this.router.navigate(['/success']);
+          this.router.navigate(['/slide'], {
+            queryParams: {
+              nextPage: 'success',
+            },
+          });
         }, 2000);
       }
     } else {
@@ -147,7 +165,11 @@ export class GameComponent implements OnInit, AfterViewInit {
         this.p.remove();
 
         console.log('here');
-        this.router.navigate(['/game-over']);
+        this.router.navigate(['/slide'], {
+          queryParams: {
+            nextPage: 'game-over',
+          },
+        });
       }, 2000);
     }
     // this.sketch.clear();
@@ -246,9 +268,20 @@ export class GameComponent implements OnInit, AfterViewInit {
             pos.y = pos.y + o.size[1] / 2;
 
             this.score++;
-            document.querySelector(
-              '#score'
-            ).textContent = this.score.toString();
+            setTimeout(() => {
+              document.querySelector('#score').textContent = '';
+              document.querySelector(
+                '#score'
+              ).textContent = this.score.toString();
+
+              setTimeout(() => {
+                document.querySelector('#score').textContent = '';
+                document.querySelector(
+                  '#score'
+                ).textContent = this.score.toString();
+              }, 10);
+            });
+
             collectibleParticles.push(
               new CollectedParticle(
                 s,

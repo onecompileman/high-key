@@ -9,7 +9,7 @@
         <img src="assets/images/score.png" alt="Score" />
         <div class="wm-game__score-info no-select">
           <b id="score">0</b>
-          <span  class="no-select">SCORE</span>
+          <span class="no-select">SCORE</span>
         </div>
       </div>
 
@@ -20,32 +20,31 @@
       >
         <img src="assets/images/score.png" alt="Score" />
         <div class="wm-game__score-info no-select">
-          <b class="no-select">{{ time | number : '.2-2'}}</b>
-          <span  class="no-select">TIME</span>
+          <b id="time" class="no-select">30.00</b>
+          <span class="no-select">TIME</span>
         </div>
       </div>
     </div>
     <div id="gameContainer"></div>
   </div>
-  <div *ngIf="!isStarted && time > 0 && !isGameOver no-select" class="wm-game__game-text animate__animated animate__flipInY" (click)="startGame()">
-    <img src="assets/images/rectangle.png" alt="Rectangle">
-    <span *ngIf="gameLoaded; else loadingText">
-      TAP THE SCREEN TO START
-    </span>
-    <ng-template #loadingText>
-      LOADING
-    </ng-template>
+  <div
+    *ngIf="!isStarted && time > 0 && !isGameOver; &quot;no-select&quot;"
+    class="wm-game__game-text animate__animated animate__flipInY"
+    (click)="startGame()"
+  >
+    <img src="assets/images/rectangle.png" alt="Rectangle" />
+    <span *ngIf="gameLoaded; else loadingText"> TAP THE SCREEN TO START </span>
+    <ng-template #loadingText> LOADING </ng-template>
   </div>
   <div class="wm-game__game-text no-select" *ngIf="time <= 0">
-    <img src="assets/images/rectangle.png" alt="Rectangle">
-    <span>
-      TIME'S UP!
-    </span>
+    <img src="assets/images/rectangle.png" alt="Rectangle" />
+    <span> TIME'S UP! </span>
   </div>
-  <div *ngIf="isGameOver" class="wm-game__game-text no-select animate__animated animate__flipInY" >
-    <img src="assets/images/rectangle.png" alt="Rectangle">
-    <span>
-      Game Over!
-    </span>
+  <div
+    *ngIf="isGameOver"
+    class="wm-game__game-text no-select animate__animated animate__flipInY"
+  >
+    <img src="assets/images/rectangle.png" alt="Rectangle" />
+    <span> Game Over! </span>
   </div>
 </div>

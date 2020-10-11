@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { mainRoutingAnimation } from './main-routing.animation';
 import { RouterOutlet } from '@angular/router';
 import { LeaderboardService } from '../core/services/leaderboards.service';
+import { SoundManagerService } from '../core/services/sound-manager.service';
 
 @Component({
   selector: 'wm-main',
@@ -15,12 +16,16 @@ export class MainComponent implements OnInit {
   height: number;
   width: number;
 
-  constructor(private leaderboardService: LeaderboardService) {}
+  constructor(
+    private leaderboardService: LeaderboardService,
+    private soundManagerService: SoundManagerService
+  ) {}
 
   ngOnInit() {
     this.isPortrait = innerHeight > innerWidth;
     this.height = innerHeight;
     this.width = innerWidth;
+    this.soundManagerService.playBackgroundMusic();
   }
 
   @HostListener('window:resize', ['$event'])

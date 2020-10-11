@@ -11,6 +11,7 @@ import { TopScorerComponent } from './top-scorer/top-scorer.component';
 import { GameOverComponent } from './game-over/game-over.component';
 import { ResetComponent } from './reset/reset.component';
 import { HomeComponent } from './home/home.component';
+import { SlideComponent } from './slide/slide.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,13 @@ const routes: Routes = [
         component: GameComponent,
         data: {
           animation: 'GamePage',
+        },
+      },
+      {
+        path: 'slide',
+        component: SlideComponent,
+        data: {
+          animation: 'Slide Page',
         },
       },
       {

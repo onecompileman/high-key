@@ -15,6 +15,7 @@ import { CoreModule } from '../core/core.module';
 import { GameOverComponent } from './game-over/game-over.component';
 import { ResetComponent } from './reset/reset.component';
 import { HomeComponent } from './home/home.component';
+import { SlideComponent } from './slide/slide.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HomeComponent } from './home/home.component';
     GameOverComponent,
     ResetComponent,
     HomeComponent,
+    SlideComponent,
   ],
   imports: [CommonModule, MainRoutingModule, SharedModule, CoreModule],
 })

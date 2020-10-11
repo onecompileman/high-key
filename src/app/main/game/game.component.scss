@@ -44,7 +44,7 @@
     align-items: center;
     position: absolute;
     top: 0;
-    color: $dark;
+    color: white;
     z-index: 10;
 
     img {
@@ -55,6 +55,7 @@
       font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
       position: absolute;
       font-size: 8vh;
+      font-weight: bold;
     }
   }
 
@@ -65,6 +66,7 @@
     align-items: center;
     position: absolute;
     font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    width: 18vh;
 
     b {
       font-size: 36px;

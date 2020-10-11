@@ -13,7 +13,12 @@
         fxLayoutAlign="center center"
       >
         <img src="assets/images/entry-form.png" alt="Entry Form" />
-        <input class="wm-enter__name-text" [(ngModel)]="name" />
+        <textarea
+          class="wm-enter__name-text"
+          [(ngModel)]="name"
+          rows="1"
+        ></textarea>
+        <!-- <input /> -->
       </div>
       <img
         (click)="next()"

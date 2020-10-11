@@ -4,75 +4,78 @@ import { Howl, Howler } from 'howler';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root',
 })
 export class SoundManagerService {
-	backgroundMusic: Howl;
-	backgroundPaused = true;
+  backgroundMusic: Howl;
+  backgroundPaused = true;
 
-	loadedSounds: BehaviorSubject<number> = new BehaviorSubject(0);
+  loadedSounds: BehaviorSubject<number> = new BehaviorSubject(0);
 
-	sound: any;
+  sound: any;
 
-	constructor() {
-		if (!this.backgroundMusic) {
-			this.backgroundMusic = new Howl({
-				src: [ 'assets/sounds/BGM1.mp3', 'assets/sounds/BGM2.mp3' ],
-				autoplay: false,
-				loop: true,
-				volume: 0.5,
-				onload: () => this.loadedSounds.next(this.loadedSounds.getValue() + 1)
-			});
+  constructor() {
+    if (!this.backgroundMusic) {
+      this.backgroundMusic = new Howl({
+        src: ['assets/sounds/BGM1.mp3'],
+        autoplay: false,
+        loop: true,
+        volume: 0.55,
+        onload: () => this.loadedSounds.next(this.loadedSounds.getValue() + 1),
+      });
 
-			this.sound = {
-				timesUp: new Howl({
-					src: [ 'assets/sounds/timesup.mp3' ],
-					autoplay: false,
-					loop: false,
-					volume: 0.5,
-					onload: () => this.loadedSounds.next(this.loadedSounds.getValue() + 1)
-				}),
-				correct: new Howl({
-					src: [ 'assets/sounds/correct.mp3' ],
-					autoplay: false,
-					loop: false,
-					volume: 0.5,
-					onload: () => this.loadedSounds.next(this.loadedSounds.getValue() + 1)
-				}),
-				wrong: new Howl({
-					src: [ 'assets/sounds/wrong.mp3' ],
-					autoplay: false,
-					loop: false,
-					volume: 0.5,
-					onload: () => this.loadedSounds.next(this.loadedSounds.getValue() + 1)
-				})
-			};
-		}
-	}
+      this.sound = {
+        timesUp: new Howl({
+          src: ['assets/sounds/timesup.mp3'],
+          autoplay: false,
+          loop: false,
+          volume: 0.5,
+          onload: () =>
+            this.loadedSounds.next(this.loadedSounds.getValue() + 1),
+        }),
+        correct: new Howl({
+          src: ['assets/sounds/correct.mp3'],
+          autoplay: false,
+          loop: false,
+          volume: 0.5,
+          onload: () =>
+            this.loadedSounds.next(this.loadedSounds.getValue() + 1),
+        }),
+        wrong: new Howl({
+          src: ['assets/sounds/wrong.mp3'],
+          autoplay: false,
+          loop: false,
+          volume: 0.5,
+          onload: () =>
+            this.loadedSounds.next(this.loadedSounds.getValue() + 1),
+        }),
+      };
+    }
+  }
 
-	get sounds() {
-		return this.loadedSounds;
-	}
+  get sounds() {
+    return this.loadedSounds;
+  }
 
-	stopBackgroundMusic() {
-		this.backgroundPaused = true;
-		this.backgroundMusic.pause();
-	}
+  stopBackgroundMusic() {
+    this.backgroundPaused = true;
+    this.backgroundMusic.pause();
+  }
 
-	playBackgroundMusic() {
-		if (this.backgroundPaused) {
-			this.backgroundPaused = false;
+  playBackgroundMusic() {
+    if (this.backgroundPaused) {
+      this.backgroundPaused = false;
 
-			this.backgroundMusic.play();
-		}
-	}
+      this.backgroundMusic.play();
+    }
+  }
 
-	stopAllSounds() {
-		// Object.keys(this.sound).forEach((key) => this.sound[key].stop());
-		this.sound.win.stop();
-	}
+  stopAllSounds() {
+    // Object.keys(this.sound).forEach((key) => this.sound[key].stop());
+    this.sound.win.stop();
+  }
 
-	playSoundByPath(path: string) {
-		this.sound[path].play();
-	}
+  playSoundByPath(path: string) {
+    this.sound[path].play();
+  }
 }

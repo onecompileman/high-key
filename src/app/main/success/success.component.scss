@@ -16,12 +16,12 @@
 
     @include for-phone {
       margin-top: 3px;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     @include for-tablet {
-      font-size: 20px;
-      margin-top: 5px;
+      font-size: 16px;
+      margin-top: 0px;
     }
 
     @include for-small-desktop {
@@ -181,7 +181,7 @@
   }
 
   &__trophy {
-    height: 47vh;
+    height: 40vh;
   }
 
   &__action-container {
@@ -311,7 +311,7 @@
   }
 
   &__time-text {
-    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
     font-size: 24px;
     // font-weight: 600;
