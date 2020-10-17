@@ -1,75 +1,17 @@
 <div class="wm-how-to" fxLayout="column" fxLayoutAlign="center center">
-  <img
-    class="wm-how-to__title"
-    src="assets/images/game-text.png"
-    alt="Game Text"
-  />
   <div
-    class="container d-flex flex-row container align-items-center justify-content-center"
+    class="p-5 p-sm-2 d-flex flex-column align-items-center justify-content-between wm-how-to__container"
   >
-    <div
-      fxFlex="45"
-      fxLayout="column"
-      fxLayoutAlign="center center"
-      class="p-1"
-    >
-      <img class="wm-how-to__hmo" src="assets/images/hmo-2.png" alt="HMO" />
-      <p class="text-align-center">
-        The <b>Triple Comfort Blend</b> of HMO, Nucleotides, and pHW is
-        scientifically designed to support
-        <b>allergy risk reduction and fast GI symptom relief.</b>
-      </p>
-    </div>
-    <div fxFlex="55" fxLayout="column" fxLayoutAlign="center start">
-      <img
-        class="wm-how-to__logo-how"
-        src="assets/images/logo-how.png"
-        alt="Logo How"
-      />
-      <span>
-        1. Click on the screen to help Timmy fly up and let go to fly down as
-        she navigates through the gut and collect Triple Comfort Blend icons to
-        address her tolerance problems.
-      </span>
-      <div class="d-flex flex-row justify-content-center w-100 m-1">
-        <!-- <img
-          src="assets/images/hmo.png"
-          alt="HMO"
-          class="wm-how-to__info-icon"
-        /> -->
-      </div>
-      <span>
-        2. Stay vigilant and help Timmy avoid common triggers of allergy and GI
-        discomfort.
-      </span>
-      <div class="d-flex flex-row w-100 m-1">
-        <img
-          src="assets/images/avoid.png"
-          alt="HMO"
-          class="wm-how-to__info-icon"
-        />
-        <!-- <img
-          src="assets/images/fat.png"
-          alt="HMO"
-          class="wm-how-to__info-icon"
-        />
-        <img
-          src="assets/images/carbo.png"
-          alt="HMO"
-          class="wm-how-to__info-icon"
-        /> -->
-      </div>
-      <span>
-        3. Players who collect the most number of Triple Comfort Blend icons
-        will be recognized in our leaderboard.
-      </span>
+    <span class="wm-how-to__how-text"> HOW TO PLAY </span>
+    <p class="wm-how-to__instructions">
+      1. Click anywhere for the ship to fly up and release to fly down <br />
+      1. Collect as many icons as you can within 30 seconds <br />
+      3. Players who collect the most icons join the leaderboard
+    </p>
+
+    <div (click)="play()" class="wm-how-to__begin-btn mt-4 mt-sm-2">
+      <img src="assets/images/button.png" alt="Button" />
+      <span>BEGIN</span>
     </div>
   </div>
-
-  <img
-    (click)="play()"
-    class="wm-how-to__action"
-    src="assets/images/begin-btn.png"
-    alt="Begin"
-  />
 </div>

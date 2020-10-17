@@ -9,39 +9,115 @@
   width: 100%;
 
   &__collected-text {
-    font-weight: bold;
-    color: #094a76;
+    font-weight: 500;
+    color: white;
     text-align: center;
     font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
 
     @include for-phone {
-      margin-top: 3px;
+      // margin-top: 3px;
       font-size: 16px;
     }
 
     @include for-tablet {
       font-size: 16px;
-      margin-top: 0px;
+      margin-top: 5px;
     }
 
     @include for-small-desktop {
-      font-size: 24px;
-      margin-top: 7px;
+      font-size: 22px;
+      margin-top: 12px;
     }
 
     @include for-desktop {
       font-size: 24px;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     @include for-big-desktop {
       font-size: 28px;
-      margin-top: 12px;
+      margin-top: 20px;
     }
+  }
+
+  &__collected-all {
+    height: 18vh;
+    margin-bottom: -3vh;
   }
 
   &__container {
     height: 100%;
+  }
+
+  &__your-score {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    color: white;
+    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    // position: absolute;
+    // color: $dark;
+    font-weight: 600;
+    // padding-left: 1.5%;
+    // padding-bottom: 1%;
+
+    @include for-phone {
+      font-size: 22px;
+    }
+
+    @include for-tablet {
+      font-size: 24px;
+    }
+
+    @include for-small-desktop {
+      font-size: 26px;
+    }
+
+    @include for-desktop {
+      font-size: 30px;
+    }
+
+    @include for-big-desktop {
+      font-size: 32px;
+    }
+  }
+
+  &__leader-score {
+    display: inline-block;
+    // vertical-align: top;
+    // text-align: center;
+    color: white;
+    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    // position: absolute;
+    // color: $dark;
+    font-weight: 600;
+    // padding-left: 1.5%;
+    // padding-bottom: 1%;
+
+    @include for-phone {
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    @include for-tablet {
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include for-small-desktop {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include for-desktop {
+      font-size: 112px;
+      line-height: 112px;
+    }
+
+    @include for-big-desktop {
+      font-size: 124px;
+      line-height: 124px;
+    }
   }
 
   &__congrats-text {
@@ -75,12 +151,102 @@
       font-size: 52px;
       margin-top: 12px;
     }
+
+    margin-top: 5px;
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    letter-spacing: 5px;
+    font-weight: 600;
+
+    @include for-phone {
+      margin-top: 3px;
+      font-size: 28px;
+    }
+
+    @include for-tablet {
+      font-size: 32px;
+      margin-top: 5px;
+    }
+
+    @include for-small-desktop {
+      font-size: 36px;
+      margin-top: 7px;
+    }
+
+    @include for-desktop {
+      font-size: 42px;
+      margin-top: 10px;
+    }
+
+    @include for-big-desktop {
+      font-size: 52px;
+      margin-top: 12px;
+    }
+  }
+
+  &__you-found-1 {
+    font-family: 'Varela';
+    letter-spacing: 3px;
+    font-size: 24px;
+    color: $warning;
+
+    @include for-phone {
+      font-size: 18px;
+    }
+
+    @include for-tablet {
+      font-size: 20px;
+    }
+
+    @include for-small-desktop {
+      font-size: 28px;
+    }
+
+    @include for-desktop {
+      font-size: 32px;
+    }
+
+    @include for-big-desktop {
+      font-size: 36px;
+    }
+  }
+
+  &__your-time {
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+    font-size: 24px;
+
+    @include for-phone {
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    @include for-tablet {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    @include for-small-desktop {
+      font-size: 14px;
+      letter-spacing: 3px;
+    }
+
+    @include for-desktop {
+      font-size: 16px;
+      letter-spacing: 3px;
+    }
+
+    @include for-big-desktop {
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
   }
 
   &__you-found {
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
+    color: $warning;
 
     @include for-phone {
       font-size: 12px;
@@ -97,19 +263,19 @@
     @include for-small-desktop {
       font-size: 16px;
       letter-spacing: 3px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     @include for-desktop {
       font-size: 18px;
       letter-spacing: 3px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     @include for-big-desktop {
       font-size: 20px;
       letter-spacing: 3px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
   }
 
@@ -119,6 +285,7 @@
     font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
+    color: white;
 
     @include for-phone {
       font-size: 12px;
@@ -150,6 +317,7 @@
   &__facebook-action {
     cursor: pointer;
     transition: 0.2s ease-in;
+    margin-top: 8px;
 
     &:hover {
       transform: scale(1.1);
@@ -160,28 +328,28 @@
     }
 
     @include for-phone {
-      max-width: 24px;
+      max-width: 28px;
     }
 
     @include for-tablet {
-      max-width: 32px;
-    }
-
-    @include for-small-desktop {
       max-width: 36px;
     }
 
-    @include for-desktop {
+    @include for-small-desktop {
       max-width: 42px;
     }
 
-    @include for-big-desktop {
+    @include for-desktop {
       max-width: 48px;
+    }
+
+    @include for-big-desktop {
+      max-width: 64px;
     }
   }
 
   &__trophy {
-    height: 40vh;
+    height: 30vh;
   }
 
   &__action-container {
@@ -191,33 +359,28 @@
 
     @include for-phone {
       right: 1%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-tablet {
       right: 2%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-small-desktop {
       right: 3%;
-      bottom: 3%;
+      bottom: 5%;
     }
 
     @include for-desktop {
       right: 4%;
-      bottom: 4%;
+      bottom: 6%;
     }
 
     @include for-big-desktop {
       right: 5%;
-      bottom: 5%;
+      bottom: 7%;
     }
-  }
-
-  &__collected-all {
-    height: 14vh;
-    margin-bottom: -3vh;
   }
 
   &__action-btn {
@@ -265,10 +428,11 @@
     // }
 
     img {
-      margin-top: 20px;
-      max-width: 120px;
+      height: 8vh;
+      min-height: 30px;
       transition: 0.2s ease-in;
       cursor: pointer;
+      margin: 1vh;
 
       &:hover {
         transform: scale(1.1);
@@ -276,36 +440,6 @@
 
       &:active {
         transform: scale(0.9);
-      }
-
-      @include for-phone {
-        max-width: 60px;
-        margin-top: 20px;
-        margin-left: -5px;
-      }
-
-      @include for-tablet {
-        max-width: 80px;
-        margin-top: 24px;
-        margin-left: -10px;
-      }
-
-      @include for-small-desktop {
-        max-width: 100px;
-        margin-top: 32px;
-        margin-left: -15px;
-      }
-
-      @include for-desktop {
-        max-width: 120px;
-        margin-top: 36px;
-        margin-left: -20px;
-      }
-
-      @include for-big-desktop {
-        max-width: 150px;
-        margin-top: 50px;
-        margin-left: -25px;
       }
     }
   }
@@ -315,63 +449,31 @@
     letter-spacing: 2px;
     font-size: 24px;
     // font-weight: 600;
-    color: $dark;
     position: absolute;
 
     @include for-phone {
+      font-size: 16px;
+      padding-bottom: 3px;
+    }
+
+    @include for-tablet {
       font-size: 18px;
       padding-bottom: 5px;
     }
 
-    @include for-tablet {
+    @include for-small-desktop {
       font-size: 20px;
-      padding-bottom: 7px;
+      padding-bottom: 6px;
     }
 
-    @include for-small-desktop {
+    @include for-desktop {
       font-size: 24px;
-      padding-bottom: 10px;
+      padding-bottom: 8px;
     }
 
-    @include for-desktop {
+    @include for-big-desktop {
       font-size: 28px;
-      padding-bottom: 12px;
-    }
-
-    @include for-big-desktop {
-      font-size: 32px;
-      padding-bottom: 14px;
-    }
-  }
-
-  &__your-time {
-    font-family: 'Varela';
-    letter-spacing: 3px;
-    font-size: 24px;
-
-    @include for-phone {
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    @include for-tablet {
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    @include for-small-desktop {
-      font-size: 14px;
-      letter-spacing: 3px;
-    }
-
-    @include for-desktop {
-      font-size: 16px;
-      letter-spacing: 3px;
-    }
-
-    @include for-big-desktop {
-      font-size: 18px;
-      letter-spacing: 3px;
+      padding-bottom: 10px;
     }
   }
 
@@ -386,19 +488,19 @@
     }
 
     @include for-tablet {
-      width: 160px;
-    }
-
-    @include for-small-desktop {
       width: 200px;
     }
 
-    @include for-desktop {
+    @include for-small-desktop {
       width: 240px;
     }
 
+    @include for-desktop {
+      width: 300px;
+    }
+
     @include for-big-desktop {
-      width: 280px;
+      width: 320px;
     }
   }
 }

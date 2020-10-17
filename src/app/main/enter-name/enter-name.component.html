@@ -5,8 +5,10 @@
       fxLayout="column"
       fxLayoutAlign="center center"
     >
-      <img class="wm-enter__logo" src="assets/images/logo-2.png" alt="Logo" />
-      <span class="wm-enter__enter-text"> ENTER YOUR NAME </span>
+      <img
+        src="assets/images/enter-name-text.png"
+        class="wm-enter__enter-name-img"
+      />
       <div
         class="wm-enter__name-field animate__animated"
         [class.animate__shakeX]="isError"
@@ -20,12 +22,10 @@
         ></textarea>
         <!-- <input /> -->
       </div>
-      <img
-        (click)="next()"
-        class="wm-enter__action"
-        src="assets/images/ok-btn.png"
-        alt="Ok"
-      />
+      <div (click)="next()" class="wm-enter__begin-btn mt-4">
+        <img src="assets/images/button.png" alt="Button" />
+        <span>BEGIN</span>
+      </div>
     </div>
   </div>
 </div>

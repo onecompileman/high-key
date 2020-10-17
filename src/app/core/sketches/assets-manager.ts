@@ -24,7 +24,7 @@ export class AssetsManager {
     // this.backgroundImage = this.p5.loadImage(`/assets/images/parallax-bg.jpg`);
     this.player = this.p5.loadImage(`/assets/images/player.png`);
     this.collectibles = Array(1)
-      .fill(1)
+      .fill(2)
       .map((n, i) =>
         this.p5.loadImage(`/assets/images/collectibles/${i + 1}.png`)
       );
@@ -33,14 +33,16 @@ export class AssetsManager {
       .map((n, i) =>
         this.p5.loadImage(`/assets/images/point-collected/${i + 1}.png`)
       );
-    this.obstacles1 = ['carbo', 'fat', 'protein'].map((obstacle) => {
-      return this.p5.loadImage(`assets/images/obstacles/${obstacle}.png`);
-    });
+    // this.obstacles1 = ['carbo', 'fat', 'protein'].map((obstacle) => {
+    //   return this.p5.loadImage(`assets/images/obstacles/${obstacle}.png`);
+    // });
 
-    // this.obstacles = Object.keys(cloneDeep(Images)).reduce((acc, key) => {
-    //   acc[key].image = this.p5.loadImage(acc[key].path);
+    this.obstacles = Object.keys(cloneDeep(Images)).reduce((acc, key) => {
+      acc[key].image = this.p5.loadImage(acc[key].path);
 
-    //   return acc;
-    // }, cloneDeep(Images));
+      return acc;
+    }, cloneDeep(Images));
+
+    console.log(this.obstacles);
   }
 }

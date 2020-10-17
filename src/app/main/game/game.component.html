@@ -6,10 +6,10 @@
         fxLayout="column"
         fxLayoutAlign="center center"
       >
-        <img src="assets/images/score.png" alt="Score" />
+        <img src="assets/images/time-holder.png" alt="Score" />
         <div class="wm-game__score-info no-select">
-          <b id="score">0</b>
-          <span class="no-select">SCORE</span>
+          <b id="score"><small>SCORE:</small> 0</b>
+          <!-- <span class="no-select">SCORE</span> -->
         </div>
       </div>
 
@@ -18,10 +18,10 @@
         fxLayout="column"
         fxLayoutAlign="center center"
       >
-        <img src="assets/images/score.png" alt="Score" />
+        <img src="assets/images/time-holder.png" alt="Score" />
         <div class="wm-game__score-info no-select">
           <b id="time" class="no-select">30.00</b>
-          <span class="no-select">TIME</span>
+          <!-- <span class="no-select">TIME</span> -->
         </div>
       </div>
     </div>
@@ -32,19 +32,19 @@
     class="wm-game__game-text animate__animated animate__flipInY"
     (click)="startGame()"
   >
-    <img src="assets/images/rectangle.png" alt="Rectangle" />
+    <img src="assets/images/rectangle-2.png" alt="Rectangle" />
     <span *ngIf="gameLoaded; else loadingText"> TAP THE SCREEN TO START </span>
     <ng-template #loadingText> LOADING </ng-template>
   </div>
   <div class="wm-game__game-text no-select" *ngIf="time <= 0">
-    <img src="assets/images/rectangle.png" alt="Rectangle" />
+    <img src="assets/images/rectangle-2.png" alt="Rectangle" />
     <span> TIME'S UP! </span>
   </div>
   <div
     *ngIf="isGameOver"
     class="wm-game__game-text no-select animate__animated animate__flipInY"
   >
-    <img src="assets/images/rectangle.png" alt="Rectangle" />
+    <img src="assets/images/rectangle-2.png" alt="Rectangle" />
     <span> Game Over! </span>
   </div>
 </div>

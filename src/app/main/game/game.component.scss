@@ -2,14 +2,14 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-game {
-  background-image: url(/assets/images/parallax-bg.jpg);
+  background-image: url(/assets/images/parallax-bg.png);
   background-size: auto 100%;
   background-position: 0 0;
   height: 100%;
   width: 100%;
 
   &--active {
-    animation: moveBackground 60s linear;
+    animation: moveBackground 90s linear;
   }
 
   &__container {
@@ -32,7 +32,7 @@
 
   &__score-ui {
     img {
-      height: 18.5vh;
+      height: 8.5vh;
     }
   }
 
@@ -70,32 +70,32 @@
 
     b {
       font-size: 36px;
-      color: $secondary;
-      font-weight: normal;
+      color: #071847;
+      font-weight: bolder;
 
       @include for-phone {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       @include for-tablet {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       @include for-small-desktop {
-        font-size: 18px;
+        font-size: 22px;
       }
 
       @include for-desktop {
-        font-size: 36px;
+        font-size: 31px;
       }
 
       @include for-big-desktop {
-        font-size: 42px;
+        font-size: 40px;
       }
     }
 
     span {
-      color: $secondary;
+      color: #071847;
       font-weight: normal;
 
       @include for-phone {

@@ -4,38 +4,22 @@
     fxLayout="column"
     fxLayoutAlign="center center"
   >
-    <div fxLayoutAlign="center center">
-      <img
-        class="wm-success__trophy"
-        src="assets/images/trophy-2.png"
-        alt="Trophy"
-      />
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <span class="wm-success__your-score"> RANK: </span>
+
       <span class="wm-success__leader-score">
         {{ rank }}
       </span>
+      <span class="wm-success__your-score"> TOP SCORE! </span>
     </div>
-    <img
-      src="assets/images/top-score-text.png"
-      class="{{ animatedClass }} wm-success__top-score"
-    />
     <span class="wm-success__collected-text">
-      YOU HAVE COLLECTED <br />
-      TRIPLE COMFORT BLEND ICONS
+      {{ score }} WORLDS COLLECTED <br />
+      IN 30 SECONDS
     </span>
 
-    <!-- <span class="wm-success__you-found">
-      YOU COLLECTED <b>{{ score }}</b> LIVE ICONS IN
-    </span> -->
-    <div fxLayoutAlign="center center">
-      <img
-        src="assets/images/time-holder.png"
-        alt="Time holder"
-        class="wm-success__time"
-      />
-      <div class="wm-success__time-text">{{ score }}<small></small></div>
-    </div>
-
-    <div class="d-flex flex-row align-items-center justify-content-center mt-2">
+    <div
+      class="d-flex flex-column align-items-center justify-content-center mt-5"
+    >
       <span class="wm-success__share-results" *ngIf="!isShareMode">
         SHARE YOUR RESULTS
       </span>
@@ -58,26 +42,6 @@
       <b>{{ name }}</b> RESULTS
     </span>
   </div>
-  <!-- <span class="wm-success__share-results" *ngIf="!isShareMode">
-      SHARE YOUR RESULTS
-    </span>
-    <span class="wm-success__share-results" *ngIf="isShareMode">
-      <b>{{ name }}</b> RESULTS
-    </span>
-    <a
-      *ngIf="!isShareMode"
-      href="https://www.facebook.com/sharer/sharer.php?u={{
-        url
-      }}&display=popup&ref=plugin&src=like&kid_directed_site=0"
-      target="blank"
-    >
-      <img
-        class="wm-success__facebook-action"
-        src="assets/images/facebook.png"
-        alt="Facebook"
-      />
-    </a>
-  </div> -->
 
   <div
     *ngIf="!isShareMode"
@@ -86,14 +50,16 @@
     fxLayoutAlign="center center"
   >
     <div class="wm-success__action-btn" (click)="play()">
-      <img src="assets/images/play-again-btn.png" alt="Play Again" />
+      <img src="assets/images/play-again.png" alt="Play Again" />
       <!-- <span>
         PLAY AGAIN
       </span> -->
     </div>
     <div class="wm-success__action-btn" (click)="leaderBoards()">
-      <img src="assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
-      <!-- <span> LEADERBOARD </span> -->
+      <img src=" assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
+      <!-- <span>
+        LEADERBOARD
+      </span> -->
     </div>
   </div>
 </div>

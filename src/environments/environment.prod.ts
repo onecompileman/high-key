@@ -1,13 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: 'AIzaSyCe1HxEM_Puf0e3IobyI9Iw7gswKaE97uw',
-    authDomain: 'triple-comfort-quest.firebaseapp.com',
-    databaseURL: 'https://triple-comfort-quest.firebaseio.com',
-    projectId: 'triple-comfort-quest',
-    storageBucket: 'triple-comfort-quest.appspot.com',
-    messagingSenderId: '909494532387',
-    appId: '1:909494532387:web:cb4d2e5551300c3d263496',
-    measurementId: 'G-420F5W2YSB',
+    apiKey: 'AIzaSyBmnydl4HG-Q5zpOCcr4Qxvy0n6ywgORf0',
+    authDomain: 'rise-conquer.firebaseapp.com',
+    databaseURL: 'https://rise-conquer.firebaseio.com',
+    projectId: 'rise-conquer',
+    storageBucket: 'rise-conquer.appspot.com',
+    messagingSenderId: '1094021931085',
+    appId: '1:1094021931085:web:91ea5499becd75956c3c04',
   },
 };

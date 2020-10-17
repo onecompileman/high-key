@@ -2,11 +2,42 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-how-to {
-  background-image: url(/assets/images/bg-1.png);
+  background-image: url(/assets/images/bg-2.png);
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
+
+  &__begin-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s linear;
+    cursor: pointer;
+
+    img {
+      height: 8.5vh;
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 4.5vh;
+      font-family: Arial, Helvetica, sans-serif;
+      position: absolute;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__container {
+    height: 55vh;
+  }
 
   &__title {
     height: 17vh;
@@ -78,86 +109,86 @@
     margin-right: 2vh;
   }
 
-  p {
-    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
-    // font-weight: bold;
-    font-size: 16px;
-    color: #2c3177;
-    line-height: 18px;
-    margin-right: 10px;
-    text-align: center;
+  // p {
+  //   // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+  //   // font-weight: bold;
+  //   font-size: 16px;
+  //   color: #2c3177;
+  //   line-height: 18px;
+  //   margin-right: 10px;
+  //   text-align: center;
 
-    @include for-phone {
-      font-size: 12px;
-      line-height: 14px;
-    }
+  //   @include for-phone {
+  //     font-size: 12px;
+  //     line-height: 14px;
+  //   }
 
-    @include for-tablet {
-      font-size: 12px;
-      line-height: 14px;
-    }
+  //   @include for-tablet {
+  //     font-size: 12px;
+  //     line-height: 14px;
+  //   }
 
-    @include for-small-desktop {
-      font-size: 16px;
-      line-height: 20px;
-    }
+  //   @include for-small-desktop {
+  //     font-size: 16px;
+  //     line-height: 20px;
+  //   }
 
-    @include for-desktop {
-      font-size: 18px;
-      line-height: 24px;
-    }
+  //   @include for-desktop {
+  //     font-size: 18px;
+  //     line-height: 24px;
+  //   }
 
-    @include for-big-desktop {
-      font-size: 20px;
-      line-height: 28px;
-    }
-  }
+  //   @include for-big-desktop {
+  //     font-size: 20px;
+  //     line-height: 28px;
+  //   }
+  // }
 
-  span {
-    font-family: 'Dolce Vita';
-    // font-weight: bolder;
-    font-size: 14px;
-    color: #2c3177;
-    line-height: 15px;
+  // span {
+  //   font-family: 'Dolce Vita';
+  //   // font-weight: bolder;
+  //   font-size: 14px;
+  //   color: #2c3177;
+  //   line-height: 15px;
 
-    @include for-phone {
-      font-size: 11px;
-      line-height: 13px;
-      font-weight: normal;
-    }
+  //   @include for-phone {
+  //     font-size: 11px;
+  //     line-height: 13px;
+  //     font-weight: normal;
+  //   }
 
-    @include for-tablet {
-      font-size: 11px;
-      line-height: 13px;
-      font-weight: normal;
-    }
+  //   @include for-tablet {
+  //     font-size: 11px;
+  //     line-height: 13px;
+  //     font-weight: normal;
+  //   }
 
-    @include for-small-desktop {
-      font-size: 14px;
-      line-height: 15px;
-      // font-weight: bolder;
-    }
+  //   @include for-small-desktop {
+  //     font-size: 14px;
+  //     line-height: 15px;
+  //     // font-weight: bolder;
+  //   }
 
-    @include for-desktop {
-      font-size: 16px;
-      line-height: 18px;
-      // font-weight: bolder;
-    }
-  }
+  //   @include for-desktop {
+  //     font-size: 16px;
+  //     line-height: 18px;
+  //     // font-weight: bolder;
+  //   }
+  // }
 
   &__how-text {
     font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     font-size: 36px;
-    color: #2c3177;
+    color: white;
     letter-spacing: 7px;
     font-weight: 800;
 
     @include for-phone {
-      font-size: 24px;
+      font-size: 28px;
     }
 
     @include for-tablet {
-      font-size: 28px;
+      font-size: 32px;
     }
 
     @include for-small-desktop {
@@ -199,8 +230,7 @@
 
   &__instructions {
     font-size: 24px;
-    font-family: 'Varela';
-    color: #2c3177;
+    color: white;
     font-weight: 600;
 
     li {
@@ -208,13 +238,13 @@
     }
 
     @include for-phone {
-      font-size: 12px;
-      margin-top: 14px;
+      font-size: 16px;
+      margin-top: 20px;
     }
 
     @include for-tablet {
-      font-size: 13px;
-      margin-top: 18px;
+      font-size: 16px;
+      margin-top: 20px;
     }
 
     @include for-small-desktop {

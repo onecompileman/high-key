@@ -128,11 +128,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         localStorage.setItem('leaderboard-id', leaderboard.id);
         setTimeout(() => {
           this.p.remove();
-          this.router.navigate(['/slide'], {
-            queryParams: {
-              nextPage: 'top-scorer',
-            },
-          });
+          this.router.navigate(['/top-scorer']);
         }, 2000);
       } else {
         const leaderboard = await this.leaderBoardService.create({
@@ -146,11 +142,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         setTimeout(() => {
           this.p.remove();
 
-          this.router.navigate(['/slide'], {
-            queryParams: {
-              nextPage: 'success',
-            },
-          });
+          this.router.navigate(['/success']);
         }, 2000);
       }
     } else {
@@ -165,11 +157,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         this.p.remove();
 
         console.log('here');
-        this.router.navigate(['/slide'], {
-          queryParams: {
-            nextPage: 'game-over',
-          },
-        });
+        this.router.navigate(['/game-over']);
       }, 2000);
     }
     // this.sketch.clear();
@@ -312,29 +300,34 @@ export class GameComponent implements OnInit, AfterViewInit {
         let spaceInterval = 900 * this.scale;
         let initialX = innerWidth * 0.6;
         for (let i = 0; i < 2; i++) {
-          const obstacle = s.random(this.assetsManager.obstacles1);
-          const obstacleObj = cloneDeep(obstacle);
+          const obstacleKey = s.random(
+            Object.keys(this.assetsManager.obstacles)
+          );
+          const obstacleObj = cloneDeep(
+            this.assetsManager.obstacles[obstacleKey]
+          );
           const pos = s.createVector(
             initialX,
-            s.random(['up', 'down']) === 'up'
-              ? s.random(10, 100)
-              : innerHeight - s.random(200, 400) * this.scale
+            obstacleObj.dir === 'up'
+              ? 10
+              : innerHeight - obstacleObj.originalSize[1] * this.scale
           );
 
           obstacles.push(new Obstacle(s, pos, obstacleObj));
-
           initialX += spaceInterval;
         }
       };
 
       let generateObstacles = () => {
-        const obstacle = s.random(this.assetsManager.obstacles1);
-        const obstacleObj = cloneDeep(obstacle);
+        const obstacleKey = s.random(Object.keys(this.assetsManager.obstacles));
+        const obstacleObj = cloneDeep(
+          this.assetsManager.obstacles[obstacleKey]
+        );
         const pos = s.createVector(
-          innerWidth + 300 * this.scale,
-          s.random(['up', 'down']) === 'up'
-            ? s.random(10, 100)
-            : innerHeight - s.random(200, 400) * this.scale
+          innerWidth + 400 * this.scale,
+          obstacleObj.dir === 'up'
+            ? 10
+            : innerHeight - obstacleObj.originalSize[1] * this.scale
         );
 
         const isCollided = obstacles.some((o) =>
@@ -342,22 +335,6 @@ export class GameComponent implements OnInit, AfterViewInit {
         );
         if (!isCollided) {
           obstacles.push(new Obstacle(s, pos, obstacleObj));
-        }
-
-        const obstacle1 = s.random(this.assetsManager.obstacles1);
-        const obstacleObj1 = cloneDeep(obstacle1);
-        const pos1 = s.createVector(
-          innerWidth + 1200 * this.scale,
-          s.random(['up', 'down']) === 'up'
-            ? s.random(10, 100)
-            : innerHeight - s.random(200, 400) * this.scale
-        );
-
-        const isCollided1 = obstacles.some((o) =>
-          o.isCollided(new Obstacle(s, pos1, obstacleObj1))
-        );
-        if (!isCollided) {
-          obstacles.push(new Obstacle(s, pos1, obstacleObj1));
         }
       };
 

@@ -63,11 +63,10 @@ export class SoundManagerService {
   }
 
   playBackgroundMusic() {
-    if (this.backgroundPaused) {
-      this.backgroundPaused = false;
-
-      this.backgroundMusic.play();
-    }
+    // if (this.backgroundPaused) {
+    //   this.backgroundPaused = false;
+    //   this.backgroundMusic.play();
+    // }
   }
 
   stopAllSounds() {

@@ -9,44 +9,39 @@
   width: 100%;
 
   &__collected-text {
-    font-weight: bold;
-    color: #094a76;
+    font-weight: 500;
+    color: white;
     text-align: center;
     font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
 
     @include for-phone {
-      margin-top: 3px;
+      // margin-top: 3px;
       font-size: 16px;
     }
 
     @include for-tablet {
       font-size: 16px;
-      margin-top: 0px;
+      margin-top: 5px;
     }
 
     @include for-small-desktop {
-      font-size: 24px;
-      margin-top: 7px;
+      font-size: 22px;
+      margin-top: 12px;
     }
 
     @include for-desktop {
       font-size: 24px;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     @include for-big-desktop {
       font-size: 28px;
-      margin-top: 12px;
+      margin-top: 20px;
     }
-  }
-
-  &__top-score {
-    height: 20vh;
   }
 
   &__collected-all {
     height: 18vh;
-    margin-top: -2vh;
     margin-bottom: -3vh;
   }
 
@@ -54,35 +49,74 @@
     height: 100%;
   }
 
-  &__leader-score {
+  &__your-score {
     display: inline-block;
     vertical-align: top;
     text-align: center;
-    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
-    position: absolute;
-    color: $dark;
-    font-weight: 800;
-    padding-left: -1%;
-    padding-bottom: 1%;
+    color: white;
+    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    // position: absolute;
+    // color: $dark;
+    font-weight: 600;
+    // padding-left: 1.5%;
+    // padding-bottom: 1%;
 
     @include for-phone {
-      font-size: 28px;
+      font-size: 22px;
     }
 
     @include for-tablet {
-      font-size: 42px;
+      font-size: 24px;
     }
 
     @include for-small-desktop {
-      font-size: 62px;
+      font-size: 26px;
     }
 
     @include for-desktop {
-      font-size: 84px;
+      font-size: 30px;
     }
 
     @include for-big-desktop {
+      font-size: 32px;
+    }
+  }
+
+  &__leader-score {
+    display: inline-block;
+    // vertical-align: top;
+    // text-align: center;
+    color: white;
+    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    // position: absolute;
+    // color: $dark;
+    font-weight: 600;
+    // padding-left: 1.5%;
+    // padding-bottom: 1%;
+
+    @include for-phone {
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    @include for-tablet {
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include for-small-desktop {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include for-desktop {
       font-size: 112px;
+      line-height: 112px;
+    }
+
+    @include for-big-desktop {
+      font-size: 124px;
+      line-height: 124px;
     }
   }
 
@@ -178,7 +212,7 @@
   }
 
   &__your-time {
-    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
 
@@ -251,6 +285,7 @@
     font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
+    color: white;
 
     @include for-phone {
       font-size: 12px;
@@ -282,7 +317,7 @@
   &__facebook-action {
     cursor: pointer;
     transition: 0.2s ease-in;
-    // margin-top: 8px;
+    margin-top: 8px;
 
     &:hover {
       transform: scale(1.1);
@@ -293,23 +328,23 @@
     }
 
     @include for-phone {
-      max-width: 24px;
+      max-width: 28px;
     }
 
     @include for-tablet {
-      max-width: 32px;
-    }
-
-    @include for-small-desktop {
       max-width: 36px;
     }
 
-    @include for-desktop {
+    @include for-small-desktop {
       max-width: 42px;
     }
 
-    @include for-big-desktop {
+    @include for-desktop {
       max-width: 48px;
+    }
+
+    @include for-big-desktop {
+      max-width: 64px;
     }
   }
 
@@ -324,27 +359,27 @@
 
     @include for-phone {
       right: 1%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-tablet {
       right: 2%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-small-desktop {
       right: 3%;
-      bottom: 3%;
+      bottom: 5%;
     }
 
     @include for-desktop {
       right: 4%;
-      bottom: 4%;
+      bottom: 6%;
     }
 
     @include for-big-desktop {
       right: 5%;
-      bottom: 5%;
+      bottom: 7%;
     }
   }
 
@@ -393,10 +428,11 @@
     // }
 
     img {
-      margin-top: 20px;
-      max-width: 120px;
+      height: 8vh;
+      min-height: 30px;
       transition: 0.2s ease-in;
       cursor: pointer;
+      margin: 1vh;
 
       &:hover {
         transform: scale(1.1);
@@ -404,36 +440,6 @@
 
       &:active {
         transform: scale(0.9);
-      }
-
-      @include for-phone {
-        max-width: 60px;
-        margin-top: 20px;
-        margin-left: -5px;
-      }
-
-      @include for-tablet {
-        max-width: 80px;
-        margin-top: 24px;
-        margin-left: -10px;
-      }
-
-      @include for-small-desktop {
-        max-width: 100px;
-        margin-top: 32px;
-        margin-left: -15px;
-      }
-
-      @include for-desktop {
-        max-width: 120px;
-        margin-top: 36px;
-        margin-left: -20px;
-      }
-
-      @include for-big-desktop {
-        max-width: 150px;
-        margin-top: 50px;
-        margin-left: -25px;
       }
     }
   }

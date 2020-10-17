@@ -2,7 +2,7 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-leaderboard {
-  background-image: url(/assets/images/bg-1.png);
+  background-image: url(/assets/images/bg-4.png);
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -48,19 +48,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 9vh;
 
     img {
-      height: 7.5vh;
-      margin-left: -10%;
+      height: 11.5vh;
+      // margin-left: -10%;
     }
 
     span {
       font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
       font-size: 4vh;
       position: absolute;
-      margin-top: 1vh;
+      margin-top: -1vh;
       color: white;
       font-weight: 600;
+      margin-right: 37vh;
     }
   }
 
@@ -88,10 +90,8 @@
 
   &__leader-body {
     display: flex;
-    margin-left: 20px;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-end;
-    height: 5.5vh;
 
     img {
       width: 50vw;
@@ -123,18 +123,19 @@
       justify-content: space-between;
       align-items: center;
       font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
-      color: $dark;
+      color: #14344b;
       font-size: 3.5vh;
       font-weight: 400;
       width: -webkit-fill-available;
       width: -moz-available;
-      padding-left: 9vh;
+      padding-left: 11vh;
       padding-right: 8vh;
     }
   }
 
   &__container {
-    height: 98%;
+    margin-top: 39vh;
+    // height: 98%;
     // background-image: url(/assets/images/leaderboard-bg.png);
     // background-size: auto 100%;
     // background-position: center;
@@ -153,27 +154,27 @@
 
     @include for-phone {
       right: 1%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-tablet {
       right: 2%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-small-desktop {
       right: 3%;
-      bottom: 3%;
+      bottom: 5%;
     }
 
     @include for-desktop {
       right: 4%;
-      bottom: 4%;
+      bottom: 6%;
     }
 
     @include for-big-desktop {
       right: 5%;
-      bottom: 5%;
+      bottom: 7%;
     }
   }
 
@@ -222,10 +223,11 @@
     // }
 
     img {
-      margin-top: 20px;
-      max-width: 120px;
+      height: 8vh;
+      min-height: 30px;
       transition: 0.2s ease-in;
       cursor: pointer;
+      margin: 1vh;
 
       &:hover {
         transform: scale(1.1);
@@ -233,36 +235,6 @@
 
       &:active {
         transform: scale(0.9);
-      }
-
-      @include for-phone {
-        max-width: 60px;
-        margin-top: 20px;
-        margin-left: -5px;
-      }
-
-      @include for-tablet {
-        max-width: 80px;
-        margin-top: 24px;
-        margin-left: -10px;
-      }
-
-      @include for-small-desktop {
-        max-width: 100px;
-        margin-top: 32px;
-        margin-left: -15px;
-      }
-
-      @include for-desktop {
-        max-width: 120px;
-        margin-top: 36px;
-        margin-left: -20px;
-      }
-
-      @include for-big-desktop {
-        max-width: 150px;
-        margin-top: 50px;
-        margin-left: -25px;
       }
     }
   }
