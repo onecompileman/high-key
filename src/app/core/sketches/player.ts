@@ -12,7 +12,7 @@ export class Player {
   constructor(p5, sprites) {
     this.p5 = p5;
     this.sprites = sprites;
-    this.originalSize = [262, 200];
+    this.originalSize = [150, 178];
     this.size = [...this.originalSize];
     this.vel = p5.createVector(0, 0);
     this.pos = p5.createVector(this.p5.width * 0.1, this.p5.height / 2);
@@ -22,14 +22,14 @@ export class Player {
   display() {
     this.p5.push();
     this.p5.translate(this.pos.x, this.pos.y);
-    this.p5.image(this.sprites[0], 0, 0, 262 * this.scale, 200 * this.scale);
+    this.p5.image(this.sprites[0], 0, 0, 150 * this.scale, 178 * this.scale);
     this.p5.pop();
 
     // if (this.p5.frameCount % 2 === 0) {
     // 	this.activeFrameIndex++;
     // }
     // this.activeFrameIndex = this.activeFrameIndex === 25 ? 0 : this.activeFrameIndex;
-    this.size = [200 * this.scale, 190 * this.scale];
+    this.size = [150 * this.scale, 178 * this.scale];
   }
 
   update() {

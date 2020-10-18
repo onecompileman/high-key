@@ -2,12 +2,31 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-leaderboard {
-  background-image: url(/assets/images/bg-4.png);
+  background-image: url(/assets/images/leaderboard-bg.png);
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
+  &__home {
+    height: 14vh;
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+  }
 
+  &__cta {
+    height: 18vh;
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+  }
+
+  &__globe {
+    height: 9vh;
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+  }
   &__logo-leader {
     height: 22vh;
     margin-bottom: -4vh;
@@ -48,10 +67,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 9vh;
+    height: 7vh;
 
     img {
-      height: 11.5vh;
+      height: 8.5vh;
       // margin-left: -10%;
     }
 
@@ -62,7 +81,7 @@
       margin-top: -1vh;
       color: white;
       font-weight: 600;
-      margin-right: 37vh;
+      margin-right: 71vh;
     }
   }
 
@@ -91,7 +110,7 @@
   &__leader-body {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 
     img {
       width: 50vw;
@@ -134,7 +153,7 @@
   }
 
   &__container {
-    margin-top: 39vh;
+    margin-top: 16vh;
     // height: 98%;
     // background-image: url(/assets/images/leaderboard-bg.png);
     // background-size: auto 100%;
@@ -223,7 +242,7 @@
     // }
 
     img {
-      height: 8vh;
+      height: 24vh;
       min-height: 30px;
       transition: 0.2s ease-in;
       cursor: pointer;
@@ -236,6 +255,39 @@
       &:active {
         transform: scale(0.9);
       }
+    }
+  }
+
+  &__time-text {
+    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-size: 24px;
+    // font-weight: 600;
+    position: absolute;
+
+    @include for-phone {
+      font-size: 16px;
+      padding-bottom: 3px;
+    }
+
+    @include for-tablet {
+      font-size: 18px;
+      padding-bottom: 5px;
+    }
+
+    @include for-small-desktop {
+      font-size: 20px;
+      padding-bottom: 6px;
+    }
+
+    @include for-desktop {
+      font-size: 24px;
+      padding-bottom: 8px;
+    }
+
+    @include for-big-desktop {
+      font-size: 28px;
+      padding-bottom: 10px;
     }
   }
 }

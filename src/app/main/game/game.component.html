@@ -1,4 +1,14 @@
 <div class="wm-game" [class.wm-game--active]="isStarted">
+  <img
+    src="assets/images/halloween.png"
+    alt="Home Icon"
+    class="wm-game__home no-select"
+  />
+  <img
+    src="assets/images/globe-logo.png"
+    alt="Globe Logo"
+    class="wm-game__globe no-select"
+  />
   <div class="wm-game__container">
     <div class="wm-game__header">
       <div
@@ -6,10 +16,10 @@
         fxLayout="column"
         fxLayoutAlign="center center"
       >
-        <img src="assets/images/time-holder.png" alt="Score" />
+        <img src="assets/images/score-container.png" alt="Score" />
         <div class="wm-game__score-info no-select">
-          <b id="score"><small>SCORE:</small> 0</b>
-          <!-- <span class="no-select">SCORE</span> -->
+          <b id="score"><small></small> 0</b>
+          <span class="no-select">SCORE</span>
         </div>
       </div>
 
@@ -18,10 +28,10 @@
         fxLayout="column"
         fxLayoutAlign="center center"
       >
-        <img src="assets/images/time-holder.png" alt="Score" />
+        <img src="assets/images/score-container.png" alt="Score" />
         <div class="wm-game__score-info no-select">
           <b id="time" class="no-select">30.00</b>
-          <!-- <span class="no-select">TIME</span> -->
+          <span class="no-select">TIME</span>
         </div>
       </div>
     </div>

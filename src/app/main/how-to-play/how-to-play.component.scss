@@ -8,6 +8,27 @@
   height: 100%;
   width: 100%;
 
+  &__home {
+    height: 14vh;
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+  }
+
+  &__cta {
+    height: 18vh;
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+  }
+
+  &__globe {
+    height: 9vh;
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+  }
+
   &__begin-btn {
     display: flex;
     align-items: center;
@@ -16,7 +37,7 @@
     cursor: pointer;
 
     img {
-      height: 8.5vh;
+      height: 20vh;
     }
 
     span {
@@ -182,6 +203,7 @@
     color: white;
     letter-spacing: 7px;
     font-weight: 800;
+    text-shadow: 6px 6px rgba(0, 0, 0, 0.3);
 
     @include for-phone {
       font-size: 28px;
@@ -230,6 +252,8 @@
 
   &__instructions {
     font-size: 24px;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.3);
     color: white;
     font-weight: 600;
 

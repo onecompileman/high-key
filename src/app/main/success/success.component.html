@@ -1,22 +1,39 @@
 <div class="wm-success">
+  <img
+    src="assets/images/halloween.png"
+    alt="Home Icon"
+    class="wm-success__home no-select"
+  />
+  <img
+    src="assets/images/globe-logo.png"
+    alt="Globe Logo"
+    class="wm-success__globe no-select"
+  />
   <div
     class="wm-success__container"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
+    <span class="wm-success__your-score"> TOP SCORE </span>
+
     <div fxLayout="column" fxLayoutAlign="center center">
-      <span class="wm-success__your-score"> YOUR SCORE: </span>
+      <img
+        class="wm-success__score-img"
+        src="assets/images/score-container.png"
+        alt="Score Container"
+      />
       <span class="wm-success__leader-score">
-        {{ score }}
+        {{ score }} <br />
+        <!-- <small>RANK</small> -->
       </span>
     </div>
     <span class="wm-success__collected-text">
-      WORLDS COLLECTED <br />
-      IN 30 SECONDS
+      CANDIES <br />
+      IN {{ time | number: '.2-2' }} SECONDS
     </span>
 
     <div
-      class="d-flex flex-column align-items-center justify-content-center mt-5"
+      class="d-flex flex-column align-items-center justify-content-center mt-3"
     >
       <span class="wm-success__share-results" *ngIf="!isShareMode">
         SHARE YOUR RESULTS
@@ -48,13 +65,13 @@
     fxLayoutAlign="center center"
   >
     <div class="wm-success__action-btn" (click)="play()">
-      <img src="assets/images/play-again.png" alt="Play Again" />
+      <img src="assets/images/play-again-btn.png" alt="Play Again" />
       <!-- <span>
         PLAY AGAIN
       </span> -->
     </div>
     <div class="wm-success__action-btn" (click)="leaderBoards()">
-      <img src=" assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
+      <img src=" assets/images/leaderboard2-btn.png" alt="Leaderboard" />
       <!-- <span>
         LEADERBOARD
       </span> -->

@@ -11,6 +11,26 @@
   &--active {
     animation: moveBackground 90s linear;
   }
+  &__home {
+    height: 14vh;
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+  }
+
+  &__cta {
+    height: 18vh;
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+  }
+
+  &__globe {
+    height: 9vh;
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+  }
 
   &__container {
     height: 100%;
@@ -22,17 +42,18 @@
 
   &__header {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     position: absolute;
     width: calc(100% - 6vh);
     margin: 3vh;
     margin-top: 5vh;
+    bottom: 3vh;
   }
 
   &__score-ui {
     img {
-      height: 8.5vh;
+      height: 19vh;
     }
   }
 
@@ -68,9 +89,12 @@
     font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     width: 18vh;
 
+    margin-left: -1vh;
+    margin-top: -2vh;
+
     b {
       font-size: 36px;
-      color: #071847;
+      color: white;
       font-weight: bolder;
 
       @include for-phone {
@@ -95,7 +119,7 @@
     }
 
     span {
-      color: #071847;
+      color: white;
       font-weight: normal;
 
       @include for-phone {
