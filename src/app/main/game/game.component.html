@@ -1,5 +1,5 @@
 <div class="wm-game" [class.wm-game--active]="isStarted">
-  <img
+  <!-- <img
     src="assets/images/halloween.png"
     alt="Home Icon"
     class="wm-game__home no-select"
@@ -8,7 +8,7 @@
     src="assets/images/globe-logo.png"
     alt="Globe Logo"
     class="wm-game__globe no-select"
-  />
+  /> -->
   <div class="wm-game__container">
     <div class="wm-game__header">
       <div
@@ -37,7 +37,21 @@
     </div>
     <div id="gameContainer"></div>
   </div>
-  <div
+
+  <img
+    *ngIf="!isStarted && time > 0 && !isGameOver; &quot;no-select&quot;"
+    (click)="startGame()"
+    src="assets/images/tap-bg.png"
+    alt="Tap To Start"
+    class="wm-game__tap-start animate__animated animate__flipInY no-select"
+  />
+  <img
+    *ngIf="time <= 0"
+    src="assets/images/timesup.png"
+    alt="Tap To Start"
+    class="wm-game__times-up animate__animated animate__flipInY no-select"
+  />
+  <!-- <div
     *ngIf="!isStarted && time > 0 && !isGameOver; &quot;no-select&quot;"
     class="wm-game__game-text animate__animated animate__flipInY"
     (click)="startGame()"
@@ -45,16 +59,16 @@
     <img src="assets/images/rectangle-2.png" alt="Rectangle" />
     <span *ngIf="gameLoaded; else loadingText"> TAP THE SCREEN TO START </span>
     <ng-template #loadingText> LOADING </ng-template>
-  </div>
-  <div class="wm-game__game-text no-select" *ngIf="time <= 0">
+  </div> -->
+  <!-- <div class="wm-game__game-text no-select" *ngIf="time <= 0">
     <img src="assets/images/rectangle-2.png" alt="Rectangle" />
     <span> TIME'S UP! </span>
-  </div>
-  <div
+  </div> -->
+  <!-- <div
     *ngIf="isGameOver"
     class="wm-game__game-text no-select animate__animated animate__flipInY"
   >
     <img src="assets/images/rectangle-2.png" alt="Rectangle" />
     <span> Game Over! </span>
-  </div>
+  </div> -->
 </div>

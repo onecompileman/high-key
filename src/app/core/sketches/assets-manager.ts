@@ -16,13 +16,13 @@ export class AssetsManager {
   }
 
   loadAllAssets() {
-    // this.playerSprites = Array(25)
-    //   .fill(1)
-    //   .map((n, i) =>
-    //     this.p5.loadImage(`/assets/images/playerSprites/1 (${i + 1}).png`)
-    //   );
-    // this.backgroundImage = this.p5.loadImage(`/assets/images/parallax-bg.jpg`);
-    this.player = this.p5.loadImage(`/assets/images/player.png`);
+    this.playerSprites = Array(16)
+      .fill(1)
+      .map((n, i) =>
+        this.p5.loadImage(`/assets/images/playerSprites/1 (${i + 1}).png`)
+      );
+    this.backgroundImage = this.p5.loadImage(`/assets/images/parallax-bg.png`);
+    // this.player = this.p5.loadImage(`/assets/images/player.png`);
     this.collectibles = Array(1)
       .fill(2)
       .map((n, i) =>

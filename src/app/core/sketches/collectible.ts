@@ -10,14 +10,14 @@ export class Collectible {
     this.p5 = p5;
     this.pos = pos;
     this.image = image;
-    this.size = [230, 220];
+    this.size = [130, 244];
     this.vel = p5.createVector(-5, 0);
   }
 
   display() {
     this.p5.push();
     this.p5.translate(this.pos.x, this.pos.y);
-    this.size = [230 * this.scale, 220 * this.scale];
+    this.size = [130 * 0.7 * this.scale, 244 * 0.7 * this.scale];
 
     this.p5.image(this.image, 0, 0, this.size[0], this.size[1]);
     this.p5.pop();

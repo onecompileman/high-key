@@ -28,7 +28,7 @@ export class Obstacle {
   }
 
   update() {
-    this.vel.x = -5 * this.scale;
+    this.vel.x = -this.obstacleObj.speed * this.scale;
     this.size = [
       this.obstacleObj.collision.w * this.scale,
       this.obstacleObj.collision.h * this.scale,
@@ -43,13 +43,13 @@ export class Obstacle {
   isCollided(target) {
     return (
       this.pos.x + this.obstacleObj.collision.x * this.scale <
-        target.pos.x + target.size[0] &&
+        target.pos.x + target.size[0] / 2 &&
       this.pos.x + this.obstacleObj.collision.x * this.scale + this.size[0] >
-        target.pos.x &&
+        target.pos.x + 100 * this.scale &&
       this.pos.y + this.obstacleObj.collision.y * this.scale <
-        target.pos.y + target.size[1] &&
+        target.pos.y + 60 * this.scale + target.size[1] - 60 * this.scale &&
       this.pos.y + this.obstacleObj.collision.y * this.scale + this.size[1] >
-        target.pos.y
+        target.pos.y + 60 * this.scale
     );
   }
 }

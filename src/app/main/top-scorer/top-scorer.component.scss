@@ -2,17 +2,62 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-success {
-  background-image: url(/assets/images/bg-2.png);
+  background-image: url(/assets/images/bg.png);
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
 
-  &__home {
-    height: 14vh;
+  &__score-container {
+    background-color: #1e1d70;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    color: white;
+    font-weight: 700;
+
+    @include for-phone {
+      // margin-top: 3px;
+      font-size: 16px;
+    }
+
+    @include for-tablet {
+      font-size: 16px;
+    }
+
+    @include for-small-desktop {
+      font-size: 22px;
+    }
+
+    @include for-desktop {
+      font-size: 24px;
+    }
+
+    @include for-big-desktop {
+      font-size: 28px;
+    }
+  }
+
+  &__logo {
+    height: 32vh;
     position: absolute;
-    top: 2vh;
-    left: 2vh;
+    bottom: 3.5vh;
+    left: 3.5vh;
+  }
+
+  &__trophy {
+    height: 20vh !important;
+  }
+
+  &__ty {
+    height: 15vh;
+  }
+
+  &__home {
+    height: 11vh;
+    position: absolute;
+    top: 3.5vh;
+    left: 3.5vh;
   }
 
   &__cta {
@@ -23,10 +68,10 @@
   }
 
   &__globe {
-    height: 9vh;
+    height: 11vh;
     position: absolute;
-    top: 2vh;
-    right: 2vh;
+    top: 3.5vh;
+    right: 3.5vh;
   }
 
   &__collected-text {
@@ -157,6 +202,7 @@
     // color: $dark;
     font-weight: 600;
     margin-left: -1.5vh;
+    margin-top: -4vh;
     // margin-bottom: 4vh;
 
     small {
@@ -183,27 +229,27 @@
 
     @include for-phone {
       font-size: 32px;
-      line-height: 16px;
+      line-height: 32px;
     }
 
     @include for-tablet {
       font-size: 64px;
-      line-height: 28px;
+      line-height: 64px;
     }
 
     @include for-small-desktop {
       font-size: 72px;
-      line-height: 32px;
+      line-height: 72px;
     }
 
     @include for-desktop {
       font-size: 112px;
-      line-height: 50px;
+      line-height: 112px;
     }
 
     @include for-big-desktop {
       font-size: 124px;
-      line-height: 60px;
+      line-height: 124px;
     }
   }
 

@@ -10,23 +10,26 @@
     class="wm-enter__globe"
   />
 
-  <img src="assets/images/cta.png" alt="Globe Logo" class="wm-enter__cta" />
   <div class="wm-enter__container" fxLayoutAlign="center center">
     <div
       class="wm-enter__form-container"
       fxLayout="column"
       fxLayoutAlign="center center"
     >
-      <img
-        src="assets/images/enter-name-text.png"
-        class="wm-enter__enter-name-img"
-      />
+      <img src="assets/images/logo.png" alt="" class="wm-enter__logo" />
+      <div class="wm-enter__enter">
+        <img
+          src="assets/images/enter-name-text.png"
+          class="wm-enter__enter-name-img"
+        />
+        <span> ENTER YOUR NAME </span>
+      </div>
       <div
         class="wm-enter__name-field animate__animated"
         [class.animate__shakeX]="isError"
         fxLayoutAlign="center center"
       >
-        <img src="assets/images/entry-form.png" alt="Entry Form" />
+        <img src="assets/images/enter-name.png" alt="Entry Form" />
         <textarea
           class="wm-enter__name-text"
           [(ngModel)]="name"

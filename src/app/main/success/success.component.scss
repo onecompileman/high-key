@@ -157,6 +157,7 @@
     // color: $dark;
     font-weight: 600;
     margin-left: -1.5vh;
+    margin-top: -4vh;
     // margin-bottom: 4vh;
 
     small {
@@ -183,27 +184,27 @@
 
     @include for-phone {
       font-size: 32px;
-      line-height: 16px;
+      line-height: 32px;
     }
 
     @include for-tablet {
       font-size: 64px;
-      line-height: 28px;
+      line-height: 64px;
     }
 
     @include for-small-desktop {
       font-size: 72px;
-      line-height: 32px;
+      line-height: 72px;
     }
 
     @include for-desktop {
       font-size: 112px;
-      line-height: 50px;
+      line-height: 112px;
     }
 
     @include for-big-desktop {
       font-size: 124px;
-      line-height: 60px;
+      line-height: 124px;
     }
   }
 

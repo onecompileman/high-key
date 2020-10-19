@@ -36,6 +36,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   scale = 1;
   timeInterval: any;
   isStarted = false;
+  isStop = false;
   isGameOver = false;
   leaderboards: any[] = [];
   gameLoaded: boolean;
@@ -72,6 +73,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   async startGame() {
     if (this.gameLoaded) {
       this.isStarted = true;
+      this.isStop = false;
       this.timeInterval = setInterval(async () => {
         this.time -= 0.1;
 
@@ -84,7 +86,8 @@ export class GameComponent implements OnInit, AfterViewInit {
           );
         });
         if (this.time <= 0) {
-          this.isStarted = false;
+          // this.isStarted = false;
+          this.isStop = true;
           clearInterval(this.timeInterval);
           this.soundManager.playSoundByPath('timesUp');
           this.saveScore();
@@ -142,7 +145,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         setTimeout(() => {
           this.p.remove();
 
-          this.router.navigate(['/success']);
+          this.router.navigate(['/game-over']);
         }, 2000);
       }
     } else {
@@ -194,7 +197,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         this.gameLoaded = true;
         canvas = s.createCanvas(innerWidth, innerHeight);
         canvas.parent('gameContainer');
-        player = new Player(s, [this.assetsManager.player]);
+        player = new Player(s, this.assetsManager.playerSprites);
         player.scale = this.scale;
 
         generateInitialObstacles();
@@ -202,7 +205,7 @@ export class GameComponent implements OnInit, AfterViewInit {
       };
 
       s.mousePressed = () => {
-        if (this.isStarted) {
+        if (this.isStarted || !this.isStop) {
           player.jumpUp();
         }
       };
@@ -211,7 +214,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         s.background(255, 255, 255, 0);
         s.clear();
         player.display();
-        if (this.isStarted) {
+        if (this.isStarted && !this.isStop) {
           player.update();
         }
 
@@ -219,7 +222,7 @@ export class GameComponent implements OnInit, AfterViewInit {
           o.display();
           o.scale = this.scale;
 
-          if (this.isStarted) {
+          if (this.isStarted && !this.isStop) {
             o.update();
 
             let collided = false;
@@ -231,6 +234,7 @@ export class GameComponent implements OnInit, AfterViewInit {
               clearInterval(this.timeInterval);
               this.soundManager.playSoundByPath('wrong');
               this.isStarted = false;
+              this.isStop = true;
               this.saveScore();
             }
           }
@@ -288,10 +292,10 @@ export class GameComponent implements OnInit, AfterViewInit {
           return !o.isOutOfBounds() && !o.isDead();
         });
 
-        if (s.frameCount % 200 === 0 && this.isStarted) {
+        if (s.frameCount % 200 === 0 && this.isStarted && !this.isStop) {
           generateObstacles();
         }
-        if (s.frameCount % 200 === 0 && this.isStarted) {
+        if (s.frameCount % 200 === 0 && this.isStarted && !this.isStop) {
           generateCollectible();
         }
       };
@@ -309,7 +313,7 @@ export class GameComponent implements OnInit, AfterViewInit {
           const pos = s.createVector(
             initialX,
             obstacleObj.dir === 'up'
-              ? 10
+              ? s.random(10, innerHeight * 0.4)
               : innerHeight - obstacleObj.originalSize[1] * this.scale
           );
 
@@ -326,7 +330,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         const pos = s.createVector(
           innerWidth + 400 * this.scale,
           obstacleObj.dir === 'up'
-            ? 10
+            ? s.random(10, innerHeight * 0.4)
             : innerHeight - obstacleObj.originalSize[1] * this.scale
         );
 
@@ -345,7 +349,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         let y;
         let iterations = 0;
         do {
-          y = s.random(0, innerHeight - initialSize[1]);
+          y = s.random(innerHeight * 0.5, innerHeight - initialSize[1]);
 
           isCollided = obstacles.some((o) =>
             o.isCollided({
@@ -375,7 +379,7 @@ export class GameComponent implements OnInit, AfterViewInit {
 
         let iterations = 0;
         do {
-          y = s.random(initialSize[1], innerHeight - initialSize[1]);
+          y = s.random(innerHeight * 0.5, innerHeight - initialSize[1]);
 
           isCollided = obstacles.some((o) =>
             o.isCollided({

@@ -2,14 +2,14 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-enter {
-  background-image: url(/assets/images/bg-2.png);
+  background-image: url(/assets/images/bg.png);
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
 
   &__home {
-    height: 14vh;
+    height: 11vh;
     position: absolute;
     top: 2vh;
     left: 2vh;
@@ -23,7 +23,7 @@
   }
 
   &__globe {
-    height: 9vh;
+    height: 11vh;
     position: absolute;
     top: 2vh;
     right: 2vh;
@@ -36,7 +36,7 @@
   }
 
   &__enter-name-img {
-    height: 9vh;
+    height: 12vh;
   }
 
   &__enter-text {
@@ -105,9 +105,9 @@
     // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     font-size: 32px;
     background: none;
-    color: $dark;
+    color: white;
     letter-spacing: 2px;
-    font-weight: 400;
+    font-weight: 600;
     position: absolute;
     outline: none;
     height: fit-content;
@@ -118,27 +118,27 @@
 
     @include for-phone {
       font-size: 16px;
-      width: 200px;
+      width: 250px;
       height: 18px;
       margin-top: -5px;
     }
 
     @include for-tablet {
-      width: 250px;
+      width: 320px;
       font-size: 18px;
       height: 24px;
       margin-top: -5px;
     }
 
     @include for-small-desktop {
-      width: 320px;
+      width: 360px;
       font-size: 22px;
       height: 28px;
       margin-top: -6px;
     }
 
     @include for-desktop {
-      width: 400px;
+      width: 420px;
       font-size: 30px;
       height: 36px;
       margin-top: -10px;
@@ -152,8 +152,21 @@
     }
   }
 
+  &__enter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 7vh;
+      margin-top: -2vh;
+      position: absolute;
+      color: white;
+      font-weight: 600;
+    }
+  }
+
   &__logo {
-    height: 22vh;
+    height: 32vh;
   }
 
   &__action {
@@ -202,26 +215,7 @@
     align-items: center;
 
     img {
-      max-width: 500px;
-      min-width: 200px;
-      width: 100%;
-      height: auto;
-
-      @include for-phone {
-        width: 200px;
-      }
-
-      @include for-tablet {
-        width: 250px;
-      }
-
-      @include for-desktop {
-        width: 360px;
-      }
-
-      @include for-big-desktop {
-        width: 500px;
-      }
+      height: 12vh;
     }
   }
 }

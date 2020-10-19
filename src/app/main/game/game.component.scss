@@ -7,15 +7,27 @@
   background-position: 0 0;
   height: 100%;
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   &--active {
-    animation: moveBackground 90s linear;
+    animation: moveBackground 60s linear;
   }
   &__home {
-    height: 14vh;
+    height: 11vh;
     position: absolute;
     top: 2vh;
     left: 2vh;
+  }
+  &__tap-start {
+    position: absolute;
+    height: 18vh;
+  }
+
+  &__times-up {
+    position: absolute;
+    height: 55vh;
   }
 
   &__cta {
@@ -26,7 +38,7 @@
   }
 
   &__globe {
-    height: 9vh;
+    height: 11vh;
     position: absolute;
     top: 2vh;
     right: 2vh;
@@ -42,13 +54,13 @@
 
   &__header {
     display: flex;
-    // justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
     position: absolute;
     width: calc(100% - 6vh);
     margin: 3vh;
     margin-top: 5vh;
-    bottom: 3vh;
+    top: 3vh;
   }
 
   &__score-ui {

@@ -2,16 +2,16 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-leaderboard {
-  background-image: url(/assets/images/leaderboard-bg.png);
+  background-image: url(/assets/images/bg.png);
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
   &__home {
-    height: 14vh;
+    height: 11vh;
     position: absolute;
-    top: 2vh;
-    left: 2vh;
+    top: 3.5vh;
+    left: 3.5vh;
   }
 
   &__cta {
@@ -22,10 +22,10 @@
   }
 
   &__globe {
-    height: 9vh;
+    height: 11vh;
     position: absolute;
-    top: 2vh;
-    right: 2vh;
+    top: 3.5vh;
+    right: 3.5vh;
   }
   &__logo-leader {
     height: 22vh;
@@ -33,11 +33,19 @@
   }
 
   &__leader-container {
-    position: absolute;
+    // position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  &__leaderboard-text {
+    height: 14vh;
+  }
+
+  &__logo {
+    height: 28vh;
   }
 
   &__leader-item {
@@ -81,7 +89,7 @@
       margin-top: -1vh;
       color: white;
       font-weight: 600;
-      margin-right: 71vh;
+      margin-right: 74vh;
     }
   }
 
@@ -153,7 +161,7 @@
   }
 
   &__container {
-    margin-top: 16vh;
+    // margin-top: 16vh;
     // height: 98%;
     // background-image: url(/assets/images/leaderboard-bg.png);
     // background-size: auto 100%;
